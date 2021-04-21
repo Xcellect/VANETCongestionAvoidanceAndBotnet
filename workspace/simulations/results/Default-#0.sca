@@ -1,0 +1,2843 @@
+version 2
+run Default-0-20210421-12:13:58-1664
+attr configname Default
+attr datetime 20210421-12:13:58
+attr experiment Default
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Sim2Scenario
+attr processid 1664
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.playgroundSizeX 1000m
+param *.playgroundSizeY 1000m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.manager.moduleType "\"exploited=org.car2x.veins.nodes.Car *=org.car2x.veins.nodes.Car\""
+param *.manager.moduleName "\"exploited=exploited *=uninfected\""
+param *.manager.updateInterval 1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"sim2.launchd.xml\")"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 300m
+param *.connectionManager.drawMaxIntfDist false
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -110dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.uninfected[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.uninfected[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.exploited[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.exploited[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.uninfected[*].applType "\"UninfectedDemo11p\""
+param *.uninfected[*].appl.headerLength "80 bit"
+param *.uninfected[*].appl.sendBeacons false
+param *.uninfected[*].appl.dataOnSch false
+param *.uninfected[*].appl.beaconInterval 1s
+param *.exploited[*].applType "\"ExploitedDemo11p\""
+param *.exploited[*].appl.headerLength "80 bit"
+param *.exploited[*].appl.sendBeacons false
+param *.exploited[*].appl.dataOnSch false
+param *.exploited[*].appl.beaconInterval 1s
+param *.uninfected[*].veinsmobility.x 0
+param *.uninfected[*].veinsmobility.y 0
+param *.uninfected[*].veinsmobility.z 0
+param *.uninfected[*].veinsmobility.setHostSpeed false
+param *.uninfected[*0].veinsmobility.accidentCount 1
+param *.uninfected[*0].veinsmobility.accidentStart 73s
+param *.uninfected[*0].veinsmobility.accidentDuration 50s
+param *.exploited[*].veinsmobility.x 0
+param *.exploited[*].veinsmobility.y 0
+param *.exploited[*].veinsmobility.z 0
+param *.exploited[*].veinsmobility.setHostSpeed false
+param *.exploited[*0].veinsmobility.accidentCount 1
+param *.exploited[*0].veinsmobility.accidentStart 73s
+param *.exploited[*0].veinsmobility.accidentDuration 50s
+
+scalar Sim2Scenario.uninfected[23].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[23].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[23].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[23].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[23].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[23].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[23].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[23].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[23].veinsmobility startTime 24
+scalar Sim2Scenario.uninfected[23].veinsmobility totalTime 15
+scalar Sim2Scenario.uninfected[23].veinsmobility stopTime 40
+scalar Sim2Scenario.uninfected[23].veinsmobility minSpeed 4.0277950379694
+scalar Sim2Scenario.uninfected[23].veinsmobility maxSpeed 13.878134806112
+scalar Sim2Scenario.uninfected[23].veinsmobility totalDistance 172.90740923549
+scalar Sim2Scenario.uninfected[23].veinsmobility totalCO2Emission 50.054110153398
+scalar Sim2Scenario.uninfected[3].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[3].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[3].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[3].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[3].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[3].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[3].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[3].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[3].veinsmobility startTime 4
+scalar Sim2Scenario.uninfected[3].veinsmobility totalTime 47
+scalar Sim2Scenario.uninfected[3].veinsmobility stopTime 52
+scalar Sim2Scenario.uninfected[3].veinsmobility minSpeed 4.1837425248161
+scalar Sim2Scenario.uninfected[3].veinsmobility maxSpeed 13.888416356484
+scalar Sim2Scenario.uninfected[3].veinsmobility totalDistance 570.1588398652
+scalar Sim2Scenario.uninfected[3].veinsmobility totalCO2Emission 131.15079257426
+scalar Sim2Scenario.uninfected[9].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[9].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[9].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[9].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[9].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[9].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[9].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[9].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[9].veinsmobility startTime 10
+scalar Sim2Scenario.uninfected[9].veinsmobility totalTime 51
+scalar Sim2Scenario.uninfected[9].veinsmobility stopTime 62
+scalar Sim2Scenario.uninfected[9].veinsmobility minSpeed 3.5621496864848
+scalar Sim2Scenario.uninfected[9].veinsmobility maxSpeed 13.887274319187
+scalar Sim2Scenario.uninfected[9].veinsmobility totalDistance 570.18997031377
+scalar Sim2Scenario.uninfected[9].veinsmobility totalCO2Emission 156.80464516604
+scalar Sim2Scenario.uninfected[13].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[13].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[13].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[13].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[13].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[13].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[13].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[13].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[13].veinsmobility startTime 14
+scalar Sim2Scenario.uninfected[13].veinsmobility totalTime 48
+scalar Sim2Scenario.uninfected[13].veinsmobility stopTime 63
+scalar Sim2Scenario.uninfected[13].veinsmobility minSpeed 3.8004325452788
+scalar Sim2Scenario.uninfected[13].veinsmobility maxSpeed 13.889763465817
+scalar Sim2Scenario.uninfected[13].veinsmobility totalDistance 573.24117441808
+scalar Sim2Scenario.uninfected[13].veinsmobility totalCO2Emission 133.86330881384
+scalar Sim2Scenario.uninfected[0].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[0].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[0].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[0].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[0].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[0].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[0].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[0].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[0].veinsmobility startTime 1
+scalar Sim2Scenario.uninfected[0].veinsmobility totalTime 61
+scalar Sim2Scenario.uninfected[0].veinsmobility stopTime 63
+scalar Sim2Scenario.uninfected[0].veinsmobility minSpeed 3.722822103166
+scalar Sim2Scenario.uninfected[0].veinsmobility maxSpeed 13.882528818171
+scalar Sim2Scenario.uninfected[0].veinsmobility totalDistance 763.49362231878
+scalar Sim2Scenario.uninfected[0].veinsmobility totalCO2Emission 161.27984760855
+scalar Sim2Scenario.uninfected[16].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[16].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[16].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[16].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[16].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[16].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[16].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[16].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[16].veinsmobility startTime 17
+scalar Sim2Scenario.uninfected[16].veinsmobility totalTime 47
+scalar Sim2Scenario.uninfected[16].veinsmobility stopTime 65
+scalar Sim2Scenario.uninfected[16].veinsmobility minSpeed 4.1265234313304
+scalar Sim2Scenario.uninfected[16].veinsmobility maxSpeed 13.882503290304
+scalar Sim2Scenario.uninfected[16].veinsmobility totalDistance 568.49705681799
+scalar Sim2Scenario.uninfected[16].veinsmobility totalCO2Emission 131.90328068092
+scalar Sim2Scenario.uninfected[2].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[2].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[2].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[2].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[2].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[2].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[2].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[2].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[2].veinsmobility startTime 3
+scalar Sim2Scenario.uninfected[2].veinsmobility totalTime 67
+scalar Sim2Scenario.uninfected[2].veinsmobility stopTime 71
+scalar Sim2Scenario.uninfected[2].veinsmobility minSpeed 3.3176953228269
+scalar Sim2Scenario.uninfected[2].veinsmobility maxSpeed 13.884849982031
+scalar Sim2Scenario.uninfected[2].veinsmobility totalDistance 758.34229990233
+scalar Sim2Scenario.uninfected[2].veinsmobility totalCO2Emission 205.89275172096
+scalar Sim2Scenario.uninfected[5].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[5].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[5].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[5].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[5].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[5].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[5].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[5].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[5].veinsmobility startTime 6
+scalar Sim2Scenario.uninfected[5].veinsmobility totalTime 66
+scalar Sim2Scenario.uninfected[5].veinsmobility stopTime 73
+scalar Sim2Scenario.uninfected[5].veinsmobility minSpeed 3.5229142080061
+scalar Sim2Scenario.uninfected[5].veinsmobility maxSpeed 13.885804472454
+scalar Sim2Scenario.uninfected[5].veinsmobility totalDistance 757.0548749679
+scalar Sim2Scenario.uninfected[5].veinsmobility totalCO2Emission 186.01210493343
+scalar Sim2Scenario.uninfected[1].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[1].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[1].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[1].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[1].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[1].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[1].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[1].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[1].veinsmobility startTime 2
+scalar Sim2Scenario.uninfected[1].veinsmobility totalTime 71
+scalar Sim2Scenario.uninfected[1].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[1].veinsmobility minSpeed 3.8605596513442
+scalar Sim2Scenario.uninfected[1].veinsmobility maxSpeed 13.889889416588
+scalar Sim2Scenario.uninfected[1].veinsmobility totalDistance 894.51475791401
+scalar Sim2Scenario.uninfected[1].veinsmobility totalCO2Emission 190.45463416379
+scalar Sim2Scenario.uninfected[10].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[10].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[10].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[10].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[10].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[10].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[10].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[10].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[10].veinsmobility startTime 11
+scalar Sim2Scenario.uninfected[10].veinsmobility totalTime 62
+scalar Sim2Scenario.uninfected[10].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[10].veinsmobility minSpeed 3.4423509383507
+scalar Sim2Scenario.uninfected[10].veinsmobility maxSpeed 13.882109054266
+scalar Sim2Scenario.uninfected[10].veinsmobility totalDistance 668.14927417612
+scalar Sim2Scenario.uninfected[10].veinsmobility totalCO2Emission 197.30200192917
+scalar Sim2Scenario.uninfected[11].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[11].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[11].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[11].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[11].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[11].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[11].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[11].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[11].veinsmobility startTime 12
+scalar Sim2Scenario.uninfected[11].veinsmobility totalTime 61
+scalar Sim2Scenario.uninfected[11].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[11].veinsmobility minSpeed 3.5885107131671
+scalar Sim2Scenario.uninfected[11].veinsmobility maxSpeed 13.888562554053
+scalar Sim2Scenario.uninfected[11].veinsmobility totalDistance 712.44565197563
+scalar Sim2Scenario.uninfected[11].veinsmobility totalCO2Emission 174.71147386338
+scalar Sim2Scenario.uninfected[12].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[12].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[12].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[12].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[12].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[12].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[12].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[12].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[12].veinsmobility startTime 13
+scalar Sim2Scenario.uninfected[12].veinsmobility totalTime 60
+scalar Sim2Scenario.uninfected[12].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[12].veinsmobility minSpeed 3.3973366077989
+scalar Sim2Scenario.uninfected[12].veinsmobility maxSpeed 13.888971277256
+scalar Sim2Scenario.uninfected[12].veinsmobility totalDistance 749.54971485819
+scalar Sim2Scenario.uninfected[12].veinsmobility totalCO2Emission 159.61489560297
+scalar Sim2Scenario.uninfected[14].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[14].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[14].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[14].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[14].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[14].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[14].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[14].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[14].veinsmobility startTime 15
+scalar Sim2Scenario.uninfected[14].veinsmobility totalTime 58
+scalar Sim2Scenario.uninfected[14].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[14].veinsmobility minSpeed 2.8013693035055
+scalar Sim2Scenario.uninfected[14].veinsmobility maxSpeed 13.886808744448
+scalar Sim2Scenario.uninfected[14].veinsmobility totalDistance 603.55874383336
+scalar Sim2Scenario.uninfected[14].veinsmobility totalCO2Emission 183.71599583928
+scalar Sim2Scenario.uninfected[15].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[15].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[15].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[15].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[15].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[15].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[15].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[15].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[15].veinsmobility startTime 16
+scalar Sim2Scenario.uninfected[15].veinsmobility totalTime 57
+scalar Sim2Scenario.uninfected[15].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[15].veinsmobility minSpeed 0.53709502093064
+scalar Sim2Scenario.uninfected[15].veinsmobility maxSpeed 13.8870143887
+scalar Sim2Scenario.uninfected[15].veinsmobility totalDistance 589.32982487097
+scalar Sim2Scenario.uninfected[15].veinsmobility totalCO2Emission 174.27035281032
+scalar Sim2Scenario.exploited[17].appl generatedWSMs 0
+scalar Sim2Scenario.exploited[17].appl receivedWSMs 0
+scalar Sim2Scenario.exploited[17].appl generatedBSMs 0
+scalar Sim2Scenario.exploited[17].appl receivedBSMs 0
+scalar Sim2Scenario.exploited[17].appl generatedWSAs 0
+scalar Sim2Scenario.exploited[17].appl receivedWSAs 0
+scalar Sim2Scenario.exploited[17].nic.phy80211p busyTime 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.exploited[17].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.exploited[17].veinsmobility startTime 18
+scalar Sim2Scenario.exploited[17].veinsmobility totalTime 55
+scalar Sim2Scenario.exploited[17].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.exploited[17].veinsmobility minSpeed 3.8093035120389
+scalar Sim2Scenario.exploited[17].veinsmobility maxSpeed 13.882726848784
+scalar Sim2Scenario.exploited[17].veinsmobility totalDistance 638.75485042167
+scalar Sim2Scenario.exploited[17].veinsmobility totalCO2Emission 162.77367919056
+scalar Sim2Scenario.uninfected[18].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[18].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[18].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[18].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[18].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[18].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[18].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[18].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[18].veinsmobility startTime 19
+scalar Sim2Scenario.uninfected[18].veinsmobility totalTime 54
+scalar Sim2Scenario.uninfected[18].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[18].veinsmobility minSpeed 3.6172514760634
+scalar Sim2Scenario.uninfected[18].veinsmobility maxSpeed 13.88748094046
+scalar Sim2Scenario.uninfected[18].veinsmobility totalDistance 614.37176583047
+scalar Sim2Scenario.uninfected[18].veinsmobility totalCO2Emission 156.85396407854
+scalar Sim2Scenario.uninfected[19].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[19].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[19].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[19].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[19].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[19].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[19].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[19].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[19].veinsmobility startTime 20
+scalar Sim2Scenario.uninfected[19].veinsmobility totalTime 53
+scalar Sim2Scenario.uninfected[19].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[19].veinsmobility minSpeed 4.1836085551388
+scalar Sim2Scenario.uninfected[19].veinsmobility maxSpeed 13.886151023735
+scalar Sim2Scenario.uninfected[19].veinsmobility totalDistance 665.25587934624
+scalar Sim2Scenario.uninfected[19].veinsmobility totalCO2Emission 142.2412156927
+scalar Sim2Scenario.uninfected[20].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[20].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[20].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[20].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[20].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[20].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[20].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[20].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[20].veinsmobility startTime 21
+scalar Sim2Scenario.uninfected[20].veinsmobility totalTime 52
+scalar Sim2Scenario.uninfected[20].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[20].veinsmobility minSpeed 3.6168500979611
+scalar Sim2Scenario.uninfected[20].veinsmobility maxSpeed 13.885193817336
+scalar Sim2Scenario.uninfected[20].veinsmobility totalDistance 591.73311508622
+scalar Sim2Scenario.uninfected[20].veinsmobility totalCO2Emission 143.1619201034
+scalar Sim2Scenario.uninfected[21].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[21].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[21].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[21].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[21].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[21].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[21].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[21].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[21].veinsmobility startTime 22
+scalar Sim2Scenario.uninfected[21].veinsmobility totalTime 51
+scalar Sim2Scenario.uninfected[21].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[21].veinsmobility minSpeed 3.5423361058903
+scalar Sim2Scenario.uninfected[21].veinsmobility maxSpeed 13.889317078406
+scalar Sim2Scenario.uninfected[21].veinsmobility totalDistance 562.70446026796
+scalar Sim2Scenario.uninfected[21].veinsmobility totalCO2Emission 157.37232127467
+scalar Sim2Scenario.uninfected[22].appl generatedWSMs 1
+scalar Sim2Scenario.uninfected[22].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[22].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[22].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[22].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[22].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[22].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 SentPackets 1
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 sentPackets:count 1
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[22].nic.mac1609_4 channelBusy:timeavg 2.771183479816e-008
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[22].veinsmobility startTime 23
+scalar Sim2Scenario.uninfected[22].veinsmobility totalTime 50
+scalar Sim2Scenario.uninfected[22].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[22].veinsmobility minSpeed 0
+scalar Sim2Scenario.uninfected[22].veinsmobility maxSpeed 13.882030911413
+scalar Sim2Scenario.uninfected[22].veinsmobility totalDistance 368.64055704438
+scalar Sim2Scenario.uninfected[22].veinsmobility totalCO2Emission 119.18232043276
+scalar Sim2Scenario.uninfected[24].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[24].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[24].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[24].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[24].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[24].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[24].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[24].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[24].veinsmobility startTime 25
+scalar Sim2Scenario.uninfected[24].veinsmobility totalTime 48
+scalar Sim2Scenario.uninfected[24].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[24].veinsmobility minSpeed 3.5078264561924
+scalar Sim2Scenario.uninfected[24].veinsmobility maxSpeed 13.887267420811
+scalar Sim2Scenario.uninfected[24].veinsmobility totalDistance 561.81233182187
+scalar Sim2Scenario.uninfected[24].veinsmobility totalCO2Emission 133.85719689626
+scalar Sim2Scenario.uninfected[25].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[25].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[25].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[25].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[25].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[25].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[25].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[25].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[25].veinsmobility startTime 26
+scalar Sim2Scenario.uninfected[25].veinsmobility totalTime 47
+scalar Sim2Scenario.uninfected[25].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[25].veinsmobility minSpeed 3.7817838354851
+scalar Sim2Scenario.uninfected[25].veinsmobility maxSpeed 13.889716829786
+scalar Sim2Scenario.uninfected[25].veinsmobility totalDistance 571.24457713721
+scalar Sim2Scenario.uninfected[25].veinsmobility totalCO2Emission 132.92481025791
+scalar Sim2Scenario.uninfected[26].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[26].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[26].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[26].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[26].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[26].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[26].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[26].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[26].veinsmobility startTime 27
+scalar Sim2Scenario.uninfected[26].veinsmobility totalTime 46
+scalar Sim2Scenario.uninfected[26].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[26].veinsmobility minSpeed 3.5373828112096
+scalar Sim2Scenario.uninfected[26].veinsmobility maxSpeed 13.887915906974
+scalar Sim2Scenario.uninfected[26].veinsmobility totalDistance 514.50304140698
+scalar Sim2Scenario.uninfected[26].veinsmobility totalCO2Emission 144.87527855117
+scalar Sim2Scenario.uninfected[27].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[27].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[27].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[27].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[27].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[27].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[27].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[27].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[27].veinsmobility startTime 28
+scalar Sim2Scenario.uninfected[27].veinsmobility totalTime 45
+scalar Sim2Scenario.uninfected[27].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[27].veinsmobility minSpeed 3.9616111245746
+scalar Sim2Scenario.uninfected[27].veinsmobility maxSpeed 13.87603409678
+scalar Sim2Scenario.uninfected[27].veinsmobility totalDistance 502.50694138698
+scalar Sim2Scenario.uninfected[27].veinsmobility totalCO2Emission 143.83785413575
+scalar Sim2Scenario.uninfected[28].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[28].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[28].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[28].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[28].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[28].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[28].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[28].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[28].veinsmobility startTime 29
+scalar Sim2Scenario.uninfected[28].veinsmobility totalTime 44
+scalar Sim2Scenario.uninfected[28].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[28].veinsmobility minSpeed 0
+scalar Sim2Scenario.uninfected[28].veinsmobility maxSpeed 13.884208573855
+scalar Sim2Scenario.uninfected[28].veinsmobility totalDistance 361.3550956576
+scalar Sim2Scenario.uninfected[28].veinsmobility totalCO2Emission 112.6910958364
+scalar Sim2Scenario.uninfected[29].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[29].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[29].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[29].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[29].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[29].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[29].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[29].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[29].veinsmobility startTime 30
+scalar Sim2Scenario.uninfected[29].veinsmobility totalTime 43
+scalar Sim2Scenario.uninfected[29].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[29].veinsmobility minSpeed 4.0905459865657
+scalar Sim2Scenario.uninfected[29].veinsmobility maxSpeed 13.880654598561
+scalar Sim2Scenario.uninfected[29].veinsmobility totalDistance 508.88940915393
+scalar Sim2Scenario.uninfected[29].veinsmobility totalCO2Emission 123.61688738901
+scalar Sim2Scenario.uninfected[30].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[30].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[30].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[30].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[30].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[30].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[30].nic.phy80211p busyTime 5.5238082894235e-006
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[30].nic.mac1609_4 channelBusy:timeavg 1.910332906438e-009
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[30].veinsmobility startTime 31
+scalar Sim2Scenario.uninfected[30].veinsmobility totalTime 42
+scalar Sim2Scenario.uninfected[30].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[30].veinsmobility minSpeed 3.9872304839682
+scalar Sim2Scenario.uninfected[30].veinsmobility maxSpeed 13.881401058221
+scalar Sim2Scenario.uninfected[30].veinsmobility totalDistance 491.03060692127
+scalar Sim2Scenario.uninfected[30].veinsmobility totalCO2Emission 121.33499368023
+scalar Sim2Scenario.uninfected[31].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[31].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[31].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[31].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[31].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[31].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[31].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[31].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[31].veinsmobility startTime 32
+scalar Sim2Scenario.uninfected[31].veinsmobility totalTime 41
+scalar Sim2Scenario.uninfected[31].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[31].veinsmobility minSpeed 3.3255649295485
+scalar Sim2Scenario.uninfected[31].veinsmobility maxSpeed 13.878186564879
+scalar Sim2Scenario.uninfected[31].veinsmobility totalDistance 464.54559579623
+scalar Sim2Scenario.uninfected[31].veinsmobility totalCO2Emission 118.87329522416
+scalar Sim2Scenario.uninfected[32].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[32].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[32].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[32].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[32].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[32].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[32].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[32].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[32].veinsmobility startTime 33
+scalar Sim2Scenario.uninfected[32].veinsmobility totalTime 40
+scalar Sim2Scenario.uninfected[32].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[32].veinsmobility minSpeed 0.8722178822637
+scalar Sim2Scenario.uninfected[32].veinsmobility maxSpeed 13.889567791808
+scalar Sim2Scenario.uninfected[32].veinsmobility totalDistance 427.80068094436
+scalar Sim2Scenario.uninfected[32].veinsmobility totalCO2Emission 116.89350395072
+scalar Sim2Scenario.uninfected[33].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[33].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[33].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[33].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[33].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[33].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[33].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[33].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[33].veinsmobility startTime 34
+scalar Sim2Scenario.uninfected[33].veinsmobility totalTime 39
+scalar Sim2Scenario.uninfected[33].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[33].veinsmobility minSpeed 4.1527076517452
+scalar Sim2Scenario.uninfected[33].veinsmobility maxSpeed 13.885444280603
+scalar Sim2Scenario.uninfected[33].veinsmobility totalDistance 506.11063921462
+scalar Sim2Scenario.uninfected[33].veinsmobility totalCO2Emission 98.323688330428
+scalar Sim2Scenario.uninfected[34].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[34].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[34].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[34].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[34].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[34].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[34].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[34].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[34].veinsmobility startTime 35
+scalar Sim2Scenario.uninfected[34].veinsmobility totalTime 38
+scalar Sim2Scenario.uninfected[34].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[34].veinsmobility minSpeed 4.014909056375
+scalar Sim2Scenario.uninfected[34].veinsmobility maxSpeed 13.889471060962
+scalar Sim2Scenario.uninfected[34].veinsmobility totalDistance 459.33421530419
+scalar Sim2Scenario.uninfected[34].veinsmobility totalCO2Emission 111.94943506829
+scalar Sim2Scenario.uninfected[35].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[35].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[35].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[35].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[35].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[35].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[35].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[35].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[35].veinsmobility startTime 36
+scalar Sim2Scenario.uninfected[35].veinsmobility totalTime 37
+scalar Sim2Scenario.uninfected[35].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[35].veinsmobility minSpeed 3.5337814227655
+scalar Sim2Scenario.uninfected[35].veinsmobility maxSpeed 13.889831382905
+scalar Sim2Scenario.uninfected[35].veinsmobility totalDistance 383.88844885263
+scalar Sim2Scenario.uninfected[35].veinsmobility totalCO2Emission 106.11544172724
+scalar Sim2Scenario.uninfected[36].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[36].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[36].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[36].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[36].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[36].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[36].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[36].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[36].veinsmobility startTime 37
+scalar Sim2Scenario.uninfected[36].veinsmobility totalTime 36
+scalar Sim2Scenario.uninfected[36].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[36].veinsmobility minSpeed 3.7180462797528
+scalar Sim2Scenario.uninfected[36].veinsmobility maxSpeed 13.879519862598
+scalar Sim2Scenario.uninfected[36].veinsmobility totalDistance 393.81759793168
+scalar Sim2Scenario.uninfected[36].veinsmobility totalCO2Emission 112.19040845838
+scalar Sim2Scenario.uninfected[37].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[37].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[37].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[37].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[37].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[37].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[37].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[37].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[37].veinsmobility startTime 38
+scalar Sim2Scenario.uninfected[37].veinsmobility totalTime 35
+scalar Sim2Scenario.uninfected[37].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[37].veinsmobility minSpeed 4.001442424085
+scalar Sim2Scenario.uninfected[37].veinsmobility maxSpeed 13.882353288957
+scalar Sim2Scenario.uninfected[37].veinsmobility totalDistance 409.57880135322
+scalar Sim2Scenario.uninfected[37].veinsmobility totalCO2Emission 112.56081857019
+scalar Sim2Scenario.exploited[38].appl generatedWSMs 0
+scalar Sim2Scenario.exploited[38].appl receivedWSMs 0
+scalar Sim2Scenario.exploited[38].appl generatedBSMs 0
+scalar Sim2Scenario.exploited[38].appl receivedBSMs 0
+scalar Sim2Scenario.exploited[38].appl generatedWSAs 0
+scalar Sim2Scenario.exploited[38].appl receivedWSAs 0
+scalar Sim2Scenario.exploited[38].nic.phy80211p busyTime 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.exploited[38].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.exploited[38].veinsmobility startTime 39
+scalar Sim2Scenario.exploited[38].veinsmobility totalTime 34
+scalar Sim2Scenario.exploited[38].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.exploited[38].veinsmobility minSpeed 3.7415462724258
+scalar Sim2Scenario.exploited[38].veinsmobility maxSpeed 13.883403561295
+scalar Sim2Scenario.exploited[38].veinsmobility totalDistance 372.90296460056
+scalar Sim2Scenario.exploited[38].veinsmobility totalCO2Emission 102.67999725683
+scalar Sim2Scenario.uninfected[39].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[39].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[39].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[39].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[39].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[39].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[39].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[39].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[39].veinsmobility startTime 40
+scalar Sim2Scenario.uninfected[39].veinsmobility totalTime 33
+scalar Sim2Scenario.uninfected[39].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[39].veinsmobility minSpeed 3.9667679551265
+scalar Sim2Scenario.uninfected[39].veinsmobility maxSpeed 13.885503359863
+scalar Sim2Scenario.uninfected[39].veinsmobility totalDistance 376.68860566292
+scalar Sim2Scenario.uninfected[39].veinsmobility totalCO2Emission 98.434542683847
+scalar Sim2Scenario.uninfected[4].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[4].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[4].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[4].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[4].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[4].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[4].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[4].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[4].veinsmobility startTime 5
+scalar Sim2Scenario.uninfected[4].veinsmobility totalTime 68
+scalar Sim2Scenario.uninfected[4].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[4].veinsmobility minSpeed 3.0996251721153
+scalar Sim2Scenario.uninfected[4].veinsmobility maxSpeed 13.885657052209
+scalar Sim2Scenario.uninfected[4].veinsmobility totalDistance 811.14312657006
+scalar Sim2Scenario.uninfected[4].veinsmobility totalCO2Emission 186.0940916881
+scalar Sim2Scenario.uninfected[40].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[40].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[40].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[40].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[40].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[40].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[40].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[40].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[40].veinsmobility startTime 41
+scalar Sim2Scenario.uninfected[40].veinsmobility totalTime 32
+scalar Sim2Scenario.uninfected[40].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[40].veinsmobility minSpeed 3.579214250131
+scalar Sim2Scenario.uninfected[40].veinsmobility maxSpeed 13.874843037003
+scalar Sim2Scenario.uninfected[40].veinsmobility totalDistance 342.19194623389
+scalar Sim2Scenario.uninfected[40].veinsmobility totalCO2Emission 99.413871267692
+scalar Sim2Scenario.exploited[41].appl generatedWSMs 0
+scalar Sim2Scenario.exploited[41].appl receivedWSMs 0
+scalar Sim2Scenario.exploited[41].appl generatedBSMs 0
+scalar Sim2Scenario.exploited[41].appl receivedBSMs 0
+scalar Sim2Scenario.exploited[41].appl generatedWSAs 0
+scalar Sim2Scenario.exploited[41].appl receivedWSAs 0
+scalar Sim2Scenario.exploited[41].nic.phy80211p busyTime 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.exploited[41].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.exploited[41].veinsmobility startTime 43
+scalar Sim2Scenario.exploited[41].veinsmobility totalTime 30
+scalar Sim2Scenario.exploited[41].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.exploited[41].veinsmobility minSpeed 3.0370810326166
+scalar Sim2Scenario.exploited[41].veinsmobility maxSpeed 13.886921987447
+scalar Sim2Scenario.exploited[41].veinsmobility totalDistance 338.27405394546
+scalar Sim2Scenario.exploited[41].veinsmobility totalCO2Emission 94.373133800496
+scalar Sim2Scenario.uninfected[42].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[42].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[42].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[42].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[42].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[42].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[42].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[42].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[42].veinsmobility startTime 43
+scalar Sim2Scenario.uninfected[42].veinsmobility totalTime 30
+scalar Sim2Scenario.uninfected[42].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[42].veinsmobility minSpeed 4.1125322051526
+scalar Sim2Scenario.uninfected[42].veinsmobility maxSpeed 13.884368328969
+scalar Sim2Scenario.uninfected[42].veinsmobility totalDistance 326.64257023642
+scalar Sim2Scenario.uninfected[42].veinsmobility totalCO2Emission 96.936399428795
+scalar Sim2Scenario.exploited[43].appl generatedWSMs 0
+scalar Sim2Scenario.exploited[43].appl receivedWSMs 0
+scalar Sim2Scenario.exploited[43].appl generatedBSMs 0
+scalar Sim2Scenario.exploited[43].appl receivedBSMs 0
+scalar Sim2Scenario.exploited[43].appl generatedWSAs 0
+scalar Sim2Scenario.exploited[43].appl receivedWSAs 0
+scalar Sim2Scenario.exploited[43].nic.phy80211p busyTime 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.exploited[43].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.exploited[43].veinsmobility startTime 44
+scalar Sim2Scenario.exploited[43].veinsmobility totalTime 29
+scalar Sim2Scenario.exploited[43].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.exploited[43].veinsmobility minSpeed 3.5684427641658
+scalar Sim2Scenario.exploited[43].veinsmobility maxSpeed 13.884288750172
+scalar Sim2Scenario.exploited[43].veinsmobility totalDistance 298.76675786837
+scalar Sim2Scenario.exploited[43].veinsmobility totalCO2Emission 94.358347760269
+scalar Sim2Scenario.uninfected[44].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[44].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[44].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[44].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[44].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[44].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[44].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[44].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[44].veinsmobility startTime 45
+scalar Sim2Scenario.uninfected[44].veinsmobility totalTime 28
+scalar Sim2Scenario.uninfected[44].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[44].veinsmobility minSpeed 4.0514964356029
+scalar Sim2Scenario.uninfected[44].veinsmobility maxSpeed 13.889670290884
+scalar Sim2Scenario.uninfected[44].veinsmobility totalDistance 351.12141909615
+scalar Sim2Scenario.uninfected[44].veinsmobility totalCO2Emission 75.988924222381
+scalar Sim2Scenario.uninfected[45].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[45].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[45].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[45].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[45].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[45].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[45].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[45].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[45].veinsmobility startTime 46
+scalar Sim2Scenario.uninfected[45].veinsmobility totalTime 27
+scalar Sim2Scenario.uninfected[45].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[45].veinsmobility minSpeed 4.0766830037938
+scalar Sim2Scenario.uninfected[45].veinsmobility maxSpeed 13.867138445645
+scalar Sim2Scenario.uninfected[45].veinsmobility totalDistance 306.81298609017
+scalar Sim2Scenario.uninfected[45].veinsmobility totalCO2Emission 89.761815739723
+scalar Sim2Scenario.uninfected[46].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[46].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[46].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[46].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[46].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[46].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[46].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[46].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[46].veinsmobility startTime 47
+scalar Sim2Scenario.uninfected[46].veinsmobility totalTime 26
+scalar Sim2Scenario.uninfected[46].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[46].veinsmobility minSpeed 4.0558836507462
+scalar Sim2Scenario.uninfected[46].veinsmobility maxSpeed 13.887791936425
+scalar Sim2Scenario.uninfected[46].veinsmobility totalDistance 325.12948947547
+scalar Sim2Scenario.uninfected[46].veinsmobility totalCO2Emission 72.254244121317
+scalar Sim2Scenario.uninfected[47].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[47].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[47].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[47].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[47].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[47].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[47].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[47].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[47].veinsmobility startTime 48
+scalar Sim2Scenario.uninfected[47].veinsmobility totalTime 25
+scalar Sim2Scenario.uninfected[47].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[47].veinsmobility minSpeed 0
+scalar Sim2Scenario.uninfected[47].veinsmobility maxSpeed 13.870494243132
+scalar Sim2Scenario.uninfected[47].veinsmobility totalDistance 179.32905046394
+scalar Sim2Scenario.uninfected[47].veinsmobility totalCO2Emission 57.898564625976
+scalar Sim2Scenario.uninfected[48].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[48].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[48].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[48].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[48].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[48].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[48].nic.phy80211p busyTime 9.6666628863603e-006
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[48].nic.mac1609_4 channelBusy:timeavg 7.7996636164808e-009
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[48].veinsmobility startTime 49
+scalar Sim2Scenario.uninfected[48].veinsmobility totalTime 24
+scalar Sim2Scenario.uninfected[48].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[48].veinsmobility minSpeed 4.0336828010034
+scalar Sim2Scenario.uninfected[48].veinsmobility maxSpeed 13.868388129089
+scalar Sim2Scenario.uninfected[48].veinsmobility totalDistance 253.29965749557
+scalar Sim2Scenario.uninfected[48].veinsmobility totalCO2Emission 85.083390149513
+scalar Sim2Scenario.uninfected[49].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[49].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[49].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[49].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[49].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[49].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[49].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[49].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[49].veinsmobility startTime 50
+scalar Sim2Scenario.uninfected[49].veinsmobility totalTime 23
+scalar Sim2Scenario.uninfected[49].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[49].veinsmobility minSpeed 2.6363864045584
+scalar Sim2Scenario.uninfected[49].veinsmobility maxSpeed 13.863997030111
+scalar Sim2Scenario.uninfected[49].veinsmobility totalDistance 207.54734035708
+scalar Sim2Scenario.uninfected[49].veinsmobility totalCO2Emission 72.301733660462
+scalar Sim2Scenario.uninfected[50].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[50].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[50].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[50].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[50].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[50].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[50].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[50].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[50].veinsmobility startTime 52
+scalar Sim2Scenario.uninfected[50].veinsmobility totalTime 21
+scalar Sim2Scenario.uninfected[50].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[50].veinsmobility minSpeed 2.8763442045643
+scalar Sim2Scenario.uninfected[50].veinsmobility maxSpeed 13.888631774541
+scalar Sim2Scenario.uninfected[50].veinsmobility totalDistance 217.12108254187
+scalar Sim2Scenario.uninfected[50].veinsmobility totalCO2Emission 71.891772740562
+scalar Sim2Scenario.uninfected[51].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[51].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[51].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[51].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[51].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[51].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[51].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[51].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[51].veinsmobility startTime 52
+scalar Sim2Scenario.uninfected[51].veinsmobility totalTime 21
+scalar Sim2Scenario.uninfected[51].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[51].veinsmobility minSpeed 3.8849071331797
+scalar Sim2Scenario.uninfected[51].veinsmobility maxSpeed 13.886040555977
+scalar Sim2Scenario.uninfected[51].veinsmobility totalDistance 202.88034774458
+scalar Sim2Scenario.uninfected[51].veinsmobility totalCO2Emission 66.641547714579
+scalar Sim2Scenario.exploited[52].appl generatedWSMs 0
+scalar Sim2Scenario.exploited[52].appl receivedWSMs 0
+scalar Sim2Scenario.exploited[52].appl generatedBSMs 0
+scalar Sim2Scenario.exploited[52].appl receivedBSMs 0
+scalar Sim2Scenario.exploited[52].appl generatedWSAs 0
+scalar Sim2Scenario.exploited[52].appl receivedWSAs 0
+scalar Sim2Scenario.exploited[52].nic.phy80211p busyTime 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.exploited[52].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.exploited[52].veinsmobility startTime 53
+scalar Sim2Scenario.exploited[52].veinsmobility totalTime 20
+scalar Sim2Scenario.exploited[52].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.exploited[52].veinsmobility minSpeed 0.43498179764778
+scalar Sim2Scenario.exploited[52].veinsmobility maxSpeed 13.858753481561
+scalar Sim2Scenario.exploited[52].veinsmobility totalDistance 181.42080318469
+scalar Sim2Scenario.exploited[52].veinsmobility totalCO2Emission 52.86502704316
+scalar Sim2Scenario.uninfected[55].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[55].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[55].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[55].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[55].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[55].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[55].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[55].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[55].veinsmobility startTime 57
+scalar Sim2Scenario.uninfected[55].veinsmobility totalTime 16
+scalar Sim2Scenario.uninfected[55].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[55].veinsmobility minSpeed 3.0587708754673
+scalar Sim2Scenario.uninfected[55].veinsmobility maxSpeed 13.889430486427
+scalar Sim2Scenario.uninfected[55].veinsmobility totalDistance 176.59113313781
+scalar Sim2Scenario.uninfected[55].veinsmobility totalCO2Emission 49.629403225074
+scalar Sim2Scenario.uninfected[53].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[53].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[53].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[53].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[53].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[53].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[53].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[53].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[53].veinsmobility startTime 55
+scalar Sim2Scenario.uninfected[53].veinsmobility totalTime 18
+scalar Sim2Scenario.uninfected[53].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[53].veinsmobility minSpeed 3.9444519916728
+scalar Sim2Scenario.uninfected[53].veinsmobility maxSpeed 13.851194196229
+scalar Sim2Scenario.uninfected[53].veinsmobility totalDistance 212.42361547667
+scalar Sim2Scenario.uninfected[53].veinsmobility totalCO2Emission 55.983905509831
+scalar Sim2Scenario.exploited[54].appl generatedWSMs 0
+scalar Sim2Scenario.exploited[54].appl receivedWSMs 0
+scalar Sim2Scenario.exploited[54].appl generatedBSMs 0
+scalar Sim2Scenario.exploited[54].appl receivedBSMs 0
+scalar Sim2Scenario.exploited[54].appl generatedWSAs 0
+scalar Sim2Scenario.exploited[54].appl receivedWSAs 0
+scalar Sim2Scenario.exploited[54].nic.phy80211p busyTime 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.exploited[54].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.exploited[54].veinsmobility startTime 56
+scalar Sim2Scenario.exploited[54].veinsmobility totalTime 17
+scalar Sim2Scenario.exploited[54].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.exploited[54].veinsmobility minSpeed 3.1401399490723
+scalar Sim2Scenario.exploited[54].veinsmobility maxSpeed 13.836658440526
+scalar Sim2Scenario.exploited[54].veinsmobility totalDistance 191.43584647643
+scalar Sim2Scenario.exploited[54].veinsmobility totalCO2Emission 55.793293677459
+scalar Sim2Scenario.uninfected[58].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[58].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[58].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[58].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[58].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[58].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[58].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[58].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[58].veinsmobility startTime 60
+scalar Sim2Scenario.uninfected[58].veinsmobility totalTime 13
+scalar Sim2Scenario.uninfected[58].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[58].veinsmobility minSpeed 4.0287312177962
+scalar Sim2Scenario.uninfected[58].veinsmobility maxSpeed 13.88604097649
+scalar Sim2Scenario.uninfected[58].veinsmobility totalDistance 143.14221203131
+scalar Sim2Scenario.uninfected[58].veinsmobility totalCO2Emission 44.758870145786
+scalar Sim2Scenario.uninfected[56].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[56].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[56].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[56].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[56].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[56].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[56].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[56].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[56].veinsmobility startTime 58
+scalar Sim2Scenario.uninfected[56].veinsmobility totalTime 15
+scalar Sim2Scenario.uninfected[56].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[56].veinsmobility minSpeed 3.7818972324052
+scalar Sim2Scenario.uninfected[56].veinsmobility maxSpeed 13.889054601928
+scalar Sim2Scenario.uninfected[56].veinsmobility totalDistance 166.28508361422
+scalar Sim2Scenario.uninfected[56].veinsmobility totalCO2Emission 48.550675953861
+scalar Sim2Scenario.uninfected[57].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[57].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[57].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[57].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[57].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[57].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[57].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[57].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[57].veinsmobility startTime 59
+scalar Sim2Scenario.uninfected[57].veinsmobility totalTime 14
+scalar Sim2Scenario.uninfected[57].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[57].veinsmobility minSpeed 3.9426925666947
+scalar Sim2Scenario.uninfected[57].veinsmobility maxSpeed 13.884354338381
+scalar Sim2Scenario.uninfected[57].veinsmobility totalDistance 156.75907310796
+scalar Sim2Scenario.uninfected[57].veinsmobility totalCO2Emission 47.209524603701
+scalar Sim2Scenario.uninfected[59].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[59].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[59].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[59].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[59].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[59].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[59].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[59].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[59].veinsmobility startTime 60
+scalar Sim2Scenario.uninfected[59].veinsmobility totalTime 13
+scalar Sim2Scenario.uninfected[59].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[59].veinsmobility minSpeed 4.0866278337733
+scalar Sim2Scenario.uninfected[59].veinsmobility maxSpeed 13.876610480247
+scalar Sim2Scenario.uninfected[59].veinsmobility totalDistance 146.59289093098
+scalar Sim2Scenario.uninfected[59].veinsmobility totalCO2Emission 46.236597330687
+scalar Sim2Scenario.uninfected[6].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[6].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[6].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[6].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[6].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[6].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[6].nic.phy80211p busyTime 3.5151510152762e-006
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[6].nic.mac1609_4 channelBusy:timeavg 4.7666659888185e-009
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[6].veinsmobility startTime 7
+scalar Sim2Scenario.uninfected[6].veinsmobility totalTime 66
+scalar Sim2Scenario.uninfected[6].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[6].veinsmobility minSpeed 3.6002013733028
+scalar Sim2Scenario.uninfected[6].veinsmobility maxSpeed 13.886526254779
+scalar Sim2Scenario.uninfected[6].veinsmobility totalDistance 756.5383219786
+scalar Sim2Scenario.uninfected[6].veinsmobility totalCO2Emission 190.20356993369
+scalar Sim2Scenario.uninfected[60].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[60].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[60].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[60].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[60].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[60].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[60].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[60].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[60].veinsmobility startTime 61
+scalar Sim2Scenario.uninfected[60].veinsmobility totalTime 12
+scalar Sim2Scenario.uninfected[60].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[60].veinsmobility minSpeed 3.8698061050244
+scalar Sim2Scenario.uninfected[60].veinsmobility maxSpeed 13.858812800422
+scalar Sim2Scenario.uninfected[60].veinsmobility totalDistance 131.28077130567
+scalar Sim2Scenario.uninfected[60].veinsmobility totalCO2Emission 44.213418082722
+scalar Sim2Scenario.uninfected[61].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[61].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[61].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[61].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[61].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[61].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[61].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[61].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[61].veinsmobility startTime 62
+scalar Sim2Scenario.uninfected[61].veinsmobility totalTime 11
+scalar Sim2Scenario.uninfected[61].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[61].veinsmobility minSpeed 3.8743775155046
+scalar Sim2Scenario.uninfected[61].veinsmobility maxSpeed 13.859822108282
+scalar Sim2Scenario.uninfected[61].veinsmobility totalDistance 115.85312909908
+scalar Sim2Scenario.uninfected[61].veinsmobility totalCO2Emission 41.719912054625
+scalar Sim2Scenario.uninfected[63].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[63].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[63].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[63].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[63].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[63].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[63].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[63].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[63].veinsmobility startTime 65
+scalar Sim2Scenario.uninfected[63].veinsmobility totalTime 8
+scalar Sim2Scenario.uninfected[63].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[63].veinsmobility minSpeed 4.1263324542361
+scalar Sim2Scenario.uninfected[63].veinsmobility maxSpeed 13.813078906171
+scalar Sim2Scenario.uninfected[63].veinsmobility totalDistance 77.348018730332
+scalar Sim2Scenario.uninfected[63].veinsmobility totalCO2Emission 35.763781192604
+scalar Sim2Scenario.uninfected[62].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[62].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[62].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[62].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[62].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[62].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[62].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[62].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[62].veinsmobility startTime 64
+scalar Sim2Scenario.uninfected[62].veinsmobility totalTime 9
+scalar Sim2Scenario.uninfected[62].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[62].veinsmobility minSpeed 3.9760455293873
+scalar Sim2Scenario.uninfected[62].veinsmobility maxSpeed 13.883157313813
+scalar Sim2Scenario.uninfected[62].veinsmobility totalDistance 89.820872574657
+scalar Sim2Scenario.uninfected[62].veinsmobility totalCO2Emission 37.802730629104
+scalar Sim2Scenario.exploited[64].appl generatedWSMs 0
+scalar Sim2Scenario.exploited[64].appl receivedWSMs 0
+scalar Sim2Scenario.exploited[64].appl generatedBSMs 0
+scalar Sim2Scenario.exploited[64].appl receivedBSMs 0
+scalar Sim2Scenario.exploited[64].appl generatedWSAs 0
+scalar Sim2Scenario.exploited[64].appl receivedWSAs 0
+scalar Sim2Scenario.exploited[64].nic.phy80211p busyTime 2.8999965977269e-005
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.exploited[64].nic.mac1609_4 channelBusy:timeavg 2.2803723246695e-009
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.exploited[64].veinsmobility startTime 65
+scalar Sim2Scenario.exploited[64].veinsmobility totalTime 8
+scalar Sim2Scenario.exploited[64].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.exploited[64].veinsmobility minSpeed 4.0842017949011
+scalar Sim2Scenario.exploited[64].veinsmobility maxSpeed 13.883631857834
+scalar Sim2Scenario.exploited[64].veinsmobility totalDistance 75.267614190862
+scalar Sim2Scenario.exploited[64].veinsmobility totalCO2Emission 35.876373029508
+scalar Sim2Scenario.uninfected[65].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[65].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[65].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[65].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[65].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[65].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[65].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[65].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[65].veinsmobility startTime 66
+scalar Sim2Scenario.uninfected[65].veinsmobility totalTime 7
+scalar Sim2Scenario.uninfected[65].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[65].veinsmobility minSpeed 4.2432959168753
+scalar Sim2Scenario.uninfected[65].veinsmobility maxSpeed 13.87033578488
+scalar Sim2Scenario.uninfected[65].veinsmobility totalDistance 62.882409998965
+scalar Sim2Scenario.uninfected[65].veinsmobility totalCO2Emission 33.747284769379
+scalar Sim2Scenario.uninfected[66].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[66].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[66].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[66].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[66].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[66].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[66].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[66].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[66].veinsmobility startTime 67
+scalar Sim2Scenario.uninfected[66].veinsmobility totalTime 6
+scalar Sim2Scenario.uninfected[66].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[66].veinsmobility minSpeed 4.1395823418634
+scalar Sim2Scenario.uninfected[66].veinsmobility maxSpeed 13.775032342838
+scalar Sim2Scenario.uninfected[66].veinsmobility totalDistance 48.874649701308
+scalar Sim2Scenario.uninfected[66].veinsmobility totalCO2Emission 31.576477178617
+scalar Sim2Scenario.uninfected[67].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[67].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[67].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[67].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[67].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[67].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[67].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[67].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[67].veinsmobility startTime 68
+scalar Sim2Scenario.uninfected[67].veinsmobility totalTime 5
+scalar Sim2Scenario.uninfected[67].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[67].veinsmobility minSpeed 4.1921787767177
+scalar Sim2Scenario.uninfected[67].veinsmobility maxSpeed 11.879355389692
+scalar Sim2Scenario.uninfected[67].veinsmobility totalDistance 35.981041633411
+scalar Sim2Scenario.uninfected[67].veinsmobility totalCO2Emission 23.175540085116
+scalar Sim2Scenario.uninfected[68].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[68].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[68].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[68].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[68].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[68].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[68].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[68].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[68].veinsmobility startTime 69
+scalar Sim2Scenario.uninfected[68].veinsmobility totalTime 4
+scalar Sim2Scenario.uninfected[68].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[68].veinsmobility minSpeed 3.9737090226986
+scalar Sim2Scenario.uninfected[68].veinsmobility maxSpeed 9.6332287827322
+scalar Sim2Scenario.uninfected[68].veinsmobility totalDistance 24.013073349826
+scalar Sim2Scenario.uninfected[68].veinsmobility totalCO2Emission 15.168243405798
+scalar Sim2Scenario.exploited[69].appl generatedWSMs 0
+scalar Sim2Scenario.exploited[69].appl receivedWSMs 0
+scalar Sim2Scenario.exploited[69].appl generatedBSMs 0
+scalar Sim2Scenario.exploited[69].appl receivedBSMs 0
+scalar Sim2Scenario.exploited[69].appl generatedWSAs 0
+scalar Sim2Scenario.exploited[69].appl receivedWSAs 0
+scalar Sim2Scenario.exploited[69].nic.phy80211p busyTime 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.exploited[69].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.exploited[69].veinsmobility startTime 70
+scalar Sim2Scenario.exploited[69].veinsmobility totalTime 3
+scalar Sim2Scenario.exploited[69].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.exploited[69].veinsmobility minSpeed 4.1371704788945
+scalar Sim2Scenario.exploited[69].veinsmobility maxSpeed 8.0638220818663
+scalar Sim2Scenario.exploited[69].veinsmobility totalDistance 15.709989105495
+scalar Sim2Scenario.exploited[69].veinsmobility totalCO2Emission 9.6732265511596
+scalar Sim2Scenario.uninfected[7].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[7].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[7].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[7].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[7].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[7].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[7].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[7].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[7].veinsmobility startTime 8
+scalar Sim2Scenario.uninfected[7].veinsmobility totalTime 65
+scalar Sim2Scenario.uninfected[7].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[7].veinsmobility minSpeed 3.6270036264462
+scalar Sim2Scenario.uninfected[7].veinsmobility maxSpeed 13.877270556565
+scalar Sim2Scenario.uninfected[7].veinsmobility totalDistance 727.92981103228
+scalar Sim2Scenario.uninfected[7].veinsmobility totalCO2Emission 196.20581882226
+scalar Sim2Scenario.uninfected[70].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[70].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[70].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[70].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[70].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[70].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[70].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[70].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[70].veinsmobility startTime 72
+scalar Sim2Scenario.uninfected[70].veinsmobility totalTime 1
+scalar Sim2Scenario.uninfected[70].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[70].veinsmobility minSpeed 2.8293971504486
+scalar Sim2Scenario.uninfected[70].veinsmobility maxSpeed 2.8293971504486
+scalar Sim2Scenario.uninfected[70].veinsmobility totalDistance 1.9571195707268
+scalar Sim2Scenario.uninfected[70].veinsmobility totalCO2Emission 0
+scalar Sim2Scenario.uninfected[71].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[71].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[71].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[71].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[71].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[71].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[71].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[71].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[71].veinsmobility startTime 72
+scalar Sim2Scenario.uninfected[71].veinsmobility totalTime 1
+scalar Sim2Scenario.uninfected[71].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[71].veinsmobility minSpeed 4.139936522817
+scalar Sim2Scenario.uninfected[71].veinsmobility maxSpeed 4.139936522817
+scalar Sim2Scenario.uninfected[71].veinsmobility totalDistance 3.1748511340779
+scalar Sim2Scenario.uninfected[71].veinsmobility totalCO2Emission 0
+scalar Sim2Scenario.uninfected[72].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[72].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[72].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[72].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[72].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[72].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[72].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[72].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[72].veinsmobility startTime 73
+scalar Sim2Scenario.uninfected[72].veinsmobility totalTime 0
+scalar Sim2Scenario.uninfected[72].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[72].veinsmobility totalDistance 0
+scalar Sim2Scenario.uninfected[72].veinsmobility totalCO2Emission 0
+scalar Sim2Scenario.uninfected[8].appl generatedWSMs 0
+scalar Sim2Scenario.uninfected[8].appl receivedWSMs 0
+scalar Sim2Scenario.uninfected[8].appl generatedBSMs 0
+scalar Sim2Scenario.uninfected[8].appl receivedBSMs 0
+scalar Sim2Scenario.uninfected[8].appl generatedWSAs 0
+scalar Sim2Scenario.uninfected[8].appl receivedWSAs 0
+scalar Sim2Scenario.uninfected[8].nic.phy80211p busyTime 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 ReceivedUnicastPackets 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 ReceivedBroadcasts 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 SentPackets 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 SentAcknowledgements 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 RetriesExceeded 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 SNIRLostPackets 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 RXTXLostPackets 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 TotalLostPackets 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 DroppedPacketsInMac 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 TooLittleTime 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 TimesIntoBackoff 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 SlotsBackoff 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 NumInternalContention 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 totalBusyTime 0
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 retriesExceeded:count 0
+attr source org_car2x_veins_modules_mac_sigRetriesExceeded
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 sentAcks:count 0
+attr source org_car2x_veins_modules_mac_sigSentAck
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 sentPackets:count 0
+attr source org_car2x_veins_modules_mac_sigSentPacket
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 collisions:count 0
+attr source org_car2x_veins_modules_mac_sigCollision
+scalar Sim2Scenario.uninfected[8].nic.mac1609_4 channelBusy:timeavg 0
+attr source org_car2x_veins_modules_mac_sigChannelBusy
+scalar Sim2Scenario.uninfected[8].veinsmobility startTime 9
+scalar Sim2Scenario.uninfected[8].veinsmobility totalTime 64
+scalar Sim2Scenario.uninfected[8].veinsmobility stopTime 73.000009385592
+scalar Sim2Scenario.uninfected[8].veinsmobility minSpeed 3.5946160302825
+scalar Sim2Scenario.uninfected[8].veinsmobility maxSpeed 13.889501384608
+scalar Sim2Scenario.uninfected[8].veinsmobility totalDistance 743.80711625023
+scalar Sim2Scenario.uninfected[8].veinsmobility totalCO2Emission 182.59757227376
+scalar Sim2Scenario.manager roiArea 0
+

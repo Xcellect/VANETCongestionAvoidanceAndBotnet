@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<buildspec version="4.0">
+    <dir makemake-options="--deep -O out -I&quot;E:\Projects\VNETBotnet\winter2021\veins-5.1&quot; -I. --meta:recurse --meta:export-include-path --meta:use-exported-include-paths --meta:export-library --meta:use-exported-libs --meta:feature-cflags --meta:feature-ldflags" path="." type="makemake"/>
+    <dir makemake-options="--deep -O out -I&quot;E:\Projects\VNETBotnet\winter2021\veins-5.1&quot; --meta:recurse --meta:export-include-path --meta:use-exported-include-paths --meta:export-library --meta:use-exported-libs --meta:feature-cflags" path="src" type="makemake"/>
+</buildspec>

@@ -1,0 +1,787 @@
+file 332407 1619019653                                          
+version 2
+run Default-0-20210421-12:13:58-1664
+attr configname Default
+attr datetime 20210421-12:13:58
+attr experiment Default
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Sim2Scenario
+attr processid 1664
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.playgroundSizeX 1000m
+param *.playgroundSizeY 1000m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.manager.moduleType "\"exploited=org.car2x.veins.nodes.Car *=org.car2x.veins.nodes.Car\""
+param *.manager.moduleName "\"exploited=exploited *=uninfected\""
+param *.manager.updateInterval 1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"sim2.launchd.xml\")"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 300m
+param *.connectionManager.drawMaxIntfDist false
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -110dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.uninfected[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.uninfected[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.exploited[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.exploited[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.uninfected[*].applType "\"UninfectedDemo11p\""
+param *.uninfected[*].appl.headerLength "80 bit"
+param *.uninfected[*].appl.sendBeacons false
+param *.uninfected[*].appl.dataOnSch false
+param *.uninfected[*].appl.beaconInterval 1s
+param *.exploited[*].applType "\"ExploitedDemo11p\""
+param *.exploited[*].appl.headerLength "80 bit"
+param *.exploited[*].appl.sendBeacons false
+param *.exploited[*].appl.dataOnSch false
+param *.exploited[*].appl.beaconInterval 1s
+param *.uninfected[*].veinsmobility.x 0
+param *.uninfected[*].veinsmobility.y 0
+param *.uninfected[*].veinsmobility.z 0
+param *.uninfected[*].veinsmobility.setHostSpeed false
+param *.uninfected[*0].veinsmobility.accidentCount 1
+param *.uninfected[*0].veinsmobility.accidentStart 73s
+param *.uninfected[*0].veinsmobility.accidentDuration 50s
+param *.exploited[*].veinsmobility.x 0
+param *.exploited[*].veinsmobility.y 0
+param *.exploited[*].veinsmobility.z 0
+param *.exploited[*].veinsmobility.setHostSpeed false
+param *.exploited[*0].veinsmobility.accidentCount 1
+param *.exploited[*0].veinsmobility.accidentStart 73s
+param *.exploited[*0].veinsmobility.accidentDuration 50s
+
+vector 0 Sim2Scenario.uninfected[0].veinsmobility posx ETV
+vector 1 Sim2Scenario.uninfected[0].veinsmobility posy ETV
+vector 2 Sim2Scenario.uninfected[1].veinsmobility posx ETV
+vector 3 Sim2Scenario.uninfected[1].veinsmobility posy ETV
+vector 4 Sim2Scenario.uninfected[0].veinsmobility speed ETV
+vector 5 Sim2Scenario.uninfected[2].veinsmobility posx ETV
+vector 6 Sim2Scenario.uninfected[2].veinsmobility posy ETV
+vector 7 Sim2Scenario.uninfected[0].veinsmobility acceleration ETV
+vector 8 Sim2Scenario.uninfected[0].veinsmobility co2emission ETV
+vector 9 Sim2Scenario.uninfected[1].veinsmobility speed ETV
+vector 10 Sim2Scenario.uninfected[3].veinsmobility posx ETV
+vector 11 Sim2Scenario.uninfected[3].veinsmobility posy ETV
+vector 12 Sim2Scenario.uninfected[1].veinsmobility acceleration ETV
+vector 13 Sim2Scenario.uninfected[1].veinsmobility co2emission ETV
+vector 14 Sim2Scenario.uninfected[2].veinsmobility speed ETV
+vector 15 Sim2Scenario.uninfected[4].veinsmobility posx ETV
+vector 16 Sim2Scenario.uninfected[4].veinsmobility posy ETV
+vector 17 Sim2Scenario.uninfected[2].veinsmobility acceleration ETV
+vector 18 Sim2Scenario.uninfected[2].veinsmobility co2emission ETV
+vector 19 Sim2Scenario.uninfected[3].veinsmobility speed ETV
+vector 20 Sim2Scenario.uninfected[5].veinsmobility posx ETV
+vector 21 Sim2Scenario.uninfected[5].veinsmobility posy ETV
+vector 22 Sim2Scenario.uninfected[3].veinsmobility acceleration ETV
+vector 23 Sim2Scenario.uninfected[3].veinsmobility co2emission ETV
+vector 24 Sim2Scenario.uninfected[4].veinsmobility speed ETV
+vector 25 Sim2Scenario.uninfected[6].veinsmobility posx ETV
+vector 26 Sim2Scenario.uninfected[6].veinsmobility posy ETV
+vector 27 Sim2Scenario.uninfected[4].veinsmobility acceleration ETV
+vector 28 Sim2Scenario.uninfected[4].veinsmobility co2emission ETV
+vector 29 Sim2Scenario.uninfected[5].veinsmobility speed ETV
+vector 30 Sim2Scenario.uninfected[7].veinsmobility posx ETV
+vector 31 Sim2Scenario.uninfected[7].veinsmobility posy ETV
+vector 32 Sim2Scenario.uninfected[5].veinsmobility acceleration ETV
+vector 33 Sim2Scenario.uninfected[5].veinsmobility co2emission ETV
+vector 34 Sim2Scenario.uninfected[6].veinsmobility speed ETV
+vector 35 Sim2Scenario.uninfected[8].veinsmobility posx ETV
+vector 36 Sim2Scenario.uninfected[8].veinsmobility posy ETV
+vector 37 Sim2Scenario.uninfected[6].veinsmobility acceleration ETV
+vector 38 Sim2Scenario.uninfected[6].veinsmobility co2emission ETV
+vector 39 Sim2Scenario.uninfected[7].veinsmobility speed ETV
+vector 40 Sim2Scenario.uninfected[9].veinsmobility posx ETV
+vector 41 Sim2Scenario.uninfected[9].veinsmobility posy ETV
+vector 42 Sim2Scenario.uninfected[7].veinsmobility acceleration ETV
+vector 43 Sim2Scenario.uninfected[7].veinsmobility co2emission ETV
+vector 44 Sim2Scenario.uninfected[8].veinsmobility speed ETV
+vector 45 Sim2Scenario.uninfected[10].veinsmobility posx ETV
+vector 46 Sim2Scenario.uninfected[10].veinsmobility posy ETV
+vector 47 Sim2Scenario.uninfected[8].veinsmobility acceleration ETV
+vector 48 Sim2Scenario.uninfected[8].veinsmobility co2emission ETV
+vector 49 Sim2Scenario.uninfected[9].veinsmobility speed ETV
+vector 50 Sim2Scenario.uninfected[11].veinsmobility posx ETV
+vector 51 Sim2Scenario.uninfected[11].veinsmobility posy ETV
+vector 52 Sim2Scenario.uninfected[9].veinsmobility acceleration ETV
+vector 53 Sim2Scenario.uninfected[9].veinsmobility co2emission ETV
+vector 54 Sim2Scenario.uninfected[10].veinsmobility speed ETV
+vector 55 Sim2Scenario.uninfected[12].veinsmobility posx ETV
+vector 56 Sim2Scenario.uninfected[12].veinsmobility posy ETV
+vector 57 Sim2Scenario.uninfected[10].veinsmobility acceleration ETV
+vector 58 Sim2Scenario.uninfected[10].veinsmobility co2emission ETV
+vector 59 Sim2Scenario.uninfected[11].veinsmobility speed ETV
+vector 60 Sim2Scenario.uninfected[13].veinsmobility posx ETV
+vector 61 Sim2Scenario.uninfected[13].veinsmobility posy ETV
+vector 62 Sim2Scenario.uninfected[11].veinsmobility acceleration ETV
+vector 63 Sim2Scenario.uninfected[11].veinsmobility co2emission ETV
+vector 64 Sim2Scenario.uninfected[12].veinsmobility speed ETV
+vector 65 Sim2Scenario.uninfected[14].veinsmobility posx ETV
+vector 66 Sim2Scenario.uninfected[14].veinsmobility posy ETV
+vector 67 Sim2Scenario.uninfected[12].veinsmobility acceleration ETV
+vector 68 Sim2Scenario.uninfected[12].veinsmobility co2emission ETV
+vector 69 Sim2Scenario.uninfected[13].veinsmobility speed ETV
+vector 70 Sim2Scenario.uninfected[15].veinsmobility posx ETV
+vector 71 Sim2Scenario.uninfected[15].veinsmobility posy ETV
+vector 72 Sim2Scenario.uninfected[13].veinsmobility acceleration ETV
+vector 73 Sim2Scenario.uninfected[13].veinsmobility co2emission ETV
+vector 74 Sim2Scenario.uninfected[14].veinsmobility speed ETV
+vector 75 Sim2Scenario.uninfected[16].veinsmobility posx ETV
+vector 76 Sim2Scenario.uninfected[16].veinsmobility posy ETV
+vector 77 Sim2Scenario.uninfected[14].veinsmobility acceleration ETV
+vector 78 Sim2Scenario.uninfected[14].veinsmobility co2emission ETV
+vector 79 Sim2Scenario.uninfected[15].veinsmobility speed ETV
+vector 80 Sim2Scenario.exploited[17].veinsmobility posx ETV
+vector 81 Sim2Scenario.exploited[17].veinsmobility posy ETV
+vector 82 Sim2Scenario.uninfected[15].veinsmobility acceleration ETV
+vector 83 Sim2Scenario.uninfected[15].veinsmobility co2emission ETV
+vector 84 Sim2Scenario.uninfected[16].veinsmobility speed ETV
+vector 85 Sim2Scenario.uninfected[18].veinsmobility posx ETV
+vector 86 Sim2Scenario.uninfected[18].veinsmobility posy ETV
+vector 87 Sim2Scenario.uninfected[16].veinsmobility acceleration ETV
+vector 88 Sim2Scenario.uninfected[16].veinsmobility co2emission ETV
+vector 89 Sim2Scenario.exploited[17].veinsmobility speed ETV
+vector 90 Sim2Scenario.uninfected[19].veinsmobility posx ETV
+vector 91 Sim2Scenario.uninfected[19].veinsmobility posy ETV
+vector 92 Sim2Scenario.exploited[17].veinsmobility acceleration ETV
+vector 93 Sim2Scenario.exploited[17].veinsmobility co2emission ETV
+vector 94 Sim2Scenario.uninfected[18].veinsmobility speed ETV
+vector 95 Sim2Scenario.uninfected[20].veinsmobility posx ETV
+vector 96 Sim2Scenario.uninfected[20].veinsmobility posy ETV
+vector 97 Sim2Scenario.uninfected[18].veinsmobility acceleration ETV
+vector 98 Sim2Scenario.uninfected[18].veinsmobility co2emission ETV
+vector 99 Sim2Scenario.uninfected[19].veinsmobility speed ETV
+vector 100 Sim2Scenario.uninfected[21].veinsmobility posx ETV
+vector 101 Sim2Scenario.uninfected[21].veinsmobility posy ETV
+vector 102 Sim2Scenario.uninfected[19].veinsmobility acceleration ETV
+vector 103 Sim2Scenario.uninfected[19].veinsmobility co2emission ETV
+vector 104 Sim2Scenario.uninfected[20].veinsmobility speed ETV
+vector 105 Sim2Scenario.uninfected[22].veinsmobility posx ETV
+vector 106 Sim2Scenario.uninfected[22].veinsmobility posy ETV
+vector 107 Sim2Scenario.uninfected[20].veinsmobility acceleration ETV
+vector 108 Sim2Scenario.uninfected[20].veinsmobility co2emission ETV
+vector 109 Sim2Scenario.uninfected[21].veinsmobility speed ETV
+vector 110 Sim2Scenario.uninfected[23].veinsmobility posx ETV
+vector 111 Sim2Scenario.uninfected[23].veinsmobility posy ETV
+vector 112 Sim2Scenario.uninfected[21].veinsmobility acceleration ETV
+vector 113 Sim2Scenario.uninfected[21].veinsmobility co2emission ETV
+vector 114 Sim2Scenario.uninfected[22].veinsmobility speed ETV
+vector 115 Sim2Scenario.uninfected[24].veinsmobility posx ETV
+vector 116 Sim2Scenario.uninfected[24].veinsmobility posy ETV
+vector 117 Sim2Scenario.uninfected[22].veinsmobility acceleration ETV
+vector 118 Sim2Scenario.uninfected[22].veinsmobility co2emission ETV
+vector 119 Sim2Scenario.uninfected[23].veinsmobility speed ETV
+vector 120 Sim2Scenario.uninfected[25].veinsmobility posx ETV
+vector 121 Sim2Scenario.uninfected[25].veinsmobility posy ETV
+vector 122 Sim2Scenario.uninfected[23].veinsmobility acceleration ETV
+vector 123 Sim2Scenario.uninfected[23].veinsmobility co2emission ETV
+vector 124 Sim2Scenario.uninfected[24].veinsmobility speed ETV
+vector 125 Sim2Scenario.uninfected[26].veinsmobility posx ETV
+vector 126 Sim2Scenario.uninfected[26].veinsmobility posy ETV
+vector 127 Sim2Scenario.uninfected[24].veinsmobility acceleration ETV
+vector 128 Sim2Scenario.uninfected[24].veinsmobility co2emission ETV
+vector 129 Sim2Scenario.uninfected[25].veinsmobility speed ETV
+vector 130 Sim2Scenario.uninfected[27].veinsmobility posx ETV
+vector 131 Sim2Scenario.uninfected[27].veinsmobility posy ETV
+vector 132 Sim2Scenario.uninfected[25].veinsmobility acceleration ETV
+vector 133 Sim2Scenario.uninfected[25].veinsmobility co2emission ETV
+vector 134 Sim2Scenario.uninfected[26].veinsmobility speed ETV
+vector 135 Sim2Scenario.uninfected[28].veinsmobility posx ETV
+vector 136 Sim2Scenario.uninfected[28].veinsmobility posy ETV
+vector 137 Sim2Scenario.uninfected[26].veinsmobility acceleration ETV
+vector 138 Sim2Scenario.uninfected[26].veinsmobility co2emission ETV
+vector 139 Sim2Scenario.uninfected[27].veinsmobility speed ETV
+vector 140 Sim2Scenario.uninfected[29].veinsmobility posx ETV
+vector 141 Sim2Scenario.uninfected[29].veinsmobility posy ETV
+vector 142 Sim2Scenario.uninfected[27].veinsmobility acceleration ETV
+vector 143 Sim2Scenario.uninfected[27].veinsmobility co2emission ETV
+vector 144 Sim2Scenario.uninfected[28].veinsmobility speed ETV
+vector 145 Sim2Scenario.uninfected[30].veinsmobility posx ETV
+vector 146 Sim2Scenario.uninfected[30].veinsmobility posy ETV
+vector 147 Sim2Scenario.uninfected[28].veinsmobility acceleration ETV
+vector 148 Sim2Scenario.uninfected[28].veinsmobility co2emission ETV
+vector 149 Sim2Scenario.uninfected[29].veinsmobility speed ETV
+vector 150 Sim2Scenario.uninfected[31].veinsmobility posx ETV
+vector 151 Sim2Scenario.uninfected[31].veinsmobility posy ETV
+vector 152 Sim2Scenario.uninfected[29].veinsmobility acceleration ETV
+vector 153 Sim2Scenario.uninfected[29].veinsmobility co2emission ETV
+vector 154 Sim2Scenario.uninfected[30].veinsmobility speed ETV
+vector 155 Sim2Scenario.uninfected[32].veinsmobility posx ETV
+vector 156 Sim2Scenario.uninfected[32].veinsmobility posy ETV
+vector 157 Sim2Scenario.uninfected[30].veinsmobility acceleration ETV
+vector 158 Sim2Scenario.uninfected[30].veinsmobility co2emission ETV
+vector 159 Sim2Scenario.uninfected[31].veinsmobility speed ETV
+vector 160 Sim2Scenario.uninfected[33].veinsmobility posx ETV
+vector 161 Sim2Scenario.uninfected[33].veinsmobility posy ETV
+vector 162 Sim2Scenario.uninfected[31].veinsmobility acceleration ETV
+vector 163 Sim2Scenario.uninfected[31].veinsmobility co2emission ETV
+vector 164 Sim2Scenario.uninfected[32].veinsmobility speed ETV
+vector 165 Sim2Scenario.uninfected[34].veinsmobility posx ETV
+vector 166 Sim2Scenario.uninfected[34].veinsmobility posy ETV
+vector 167 Sim2Scenario.uninfected[32].veinsmobility acceleration ETV
+vector 168 Sim2Scenario.uninfected[32].veinsmobility co2emission ETV
+vector 169 Sim2Scenario.uninfected[33].veinsmobility speed ETV
+vector 170 Sim2Scenario.uninfected[35].veinsmobility posx ETV
+vector 171 Sim2Scenario.uninfected[35].veinsmobility posy ETV
+vector 172 Sim2Scenario.uninfected[33].veinsmobility acceleration ETV
+vector 173 Sim2Scenario.uninfected[33].veinsmobility co2emission ETV
+vector 174 Sim2Scenario.uninfected[34].veinsmobility speed ETV
+vector 175 Sim2Scenario.uninfected[36].veinsmobility posx ETV
+vector 176 Sim2Scenario.uninfected[36].veinsmobility posy ETV
+vector 177 Sim2Scenario.uninfected[34].veinsmobility acceleration ETV
+vector 178 Sim2Scenario.uninfected[34].veinsmobility co2emission ETV
+vector 179 Sim2Scenario.uninfected[35].veinsmobility speed ETV
+vector 180 Sim2Scenario.uninfected[37].veinsmobility posx ETV
+vector 181 Sim2Scenario.uninfected[37].veinsmobility posy ETV
+vector 182 Sim2Scenario.uninfected[35].veinsmobility acceleration ETV
+vector 183 Sim2Scenario.uninfected[35].veinsmobility co2emission ETV
+vector 184 Sim2Scenario.uninfected[36].veinsmobility speed ETV
+vector 185 Sim2Scenario.exploited[38].veinsmobility posx ETV
+vector 186 Sim2Scenario.exploited[38].veinsmobility posy ETV
+vector 187 Sim2Scenario.uninfected[36].veinsmobility acceleration ETV
+vector 188 Sim2Scenario.uninfected[36].veinsmobility co2emission ETV
+vector 189 Sim2Scenario.uninfected[37].veinsmobility speed ETV
+123	15333 378 27 40 26 39 14 1.7046288362581 7.8248594772988 50.054110153398 244.29796694799
+122	15711 397 27 40 26 39 14 -0.09373022872256 2.0943918044725 9.8061608840758 18.728260891895
+119	16108 402 26 40 25 39 15 4.0277950379694 13.878134806112 178.11467811615 2267.4349855542
+111	16510 272 25 40 24 39 16 823.4 823.4 13174.4 10847800.96
+110	16782 432 25 40 24 39 16 438.71025789349 611.61766712898 8591.7896323766 4665052.4677468
+vector 190 Sim2Scenario.uninfected[39].veinsmobility posx ETV
+vector 191 Sim2Scenario.uninfected[39].veinsmobility posy ETV
+vector 192 Sim2Scenario.uninfected[37].veinsmobility acceleration ETV
+vector 193 Sim2Scenario.uninfected[37].veinsmobility co2emission ETV
+vector 194 Sim2Scenario.exploited[38].veinsmobility speed ETV
+vector 195 Sim2Scenario.uninfected[40].veinsmobility posx ETV
+vector 196 Sim2Scenario.uninfected[40].veinsmobility posy ETV
+vector 197 Sim2Scenario.exploited[38].veinsmobility acceleration ETV
+vector 198 Sim2Scenario.exploited[38].veinsmobility co2emission ETV
+vector 199 Sim2Scenario.uninfected[39].veinsmobility speed ETV
+vector 200 Sim2Scenario.uninfected[39].veinsmobility acceleration ETV
+vector 201 Sim2Scenario.uninfected[39].veinsmobility co2emission ETV
+vector 202 Sim2Scenario.uninfected[40].veinsmobility speed ETV
+vector 203 Sim2Scenario.exploited[41].veinsmobility posx ETV
+vector 204 Sim2Scenario.exploited[41].veinsmobility posy ETV
+vector 205 Sim2Scenario.uninfected[42].veinsmobility posx ETV
+vector 206 Sim2Scenario.uninfected[42].veinsmobility posy ETV
+vector 207 Sim2Scenario.uninfected[40].veinsmobility acceleration ETV
+vector 208 Sim2Scenario.uninfected[40].veinsmobility co2emission ETV
+vector 209 Sim2Scenario.exploited[43].veinsmobility posx ETV
+vector 210 Sim2Scenario.exploited[43].veinsmobility posy ETV
+vector 211 Sim2Scenario.exploited[41].veinsmobility speed ETV
+vector 212 Sim2Scenario.uninfected[42].veinsmobility speed ETV
+vector 213 Sim2Scenario.uninfected[44].veinsmobility posx ETV
+vector 214 Sim2Scenario.uninfected[44].veinsmobility posy ETV
+vector 215 Sim2Scenario.exploited[41].veinsmobility acceleration ETV
+vector 216 Sim2Scenario.exploited[41].veinsmobility co2emission ETV
+vector 217 Sim2Scenario.uninfected[42].veinsmobility acceleration ETV
+vector 218 Sim2Scenario.uninfected[42].veinsmobility co2emission ETV
+vector 219 Sim2Scenario.exploited[43].veinsmobility speed ETV
+vector 220 Sim2Scenario.uninfected[45].veinsmobility posx ETV
+vector 221 Sim2Scenario.uninfected[45].veinsmobility posy ETV
+vector 222 Sim2Scenario.exploited[43].veinsmobility acceleration ETV
+vector 223 Sim2Scenario.exploited[43].veinsmobility co2emission ETV
+vector 224 Sim2Scenario.uninfected[44].veinsmobility speed ETV
+vector 225 Sim2Scenario.uninfected[46].veinsmobility posx ETV
+vector 226 Sim2Scenario.uninfected[46].veinsmobility posy ETV
+vector 227 Sim2Scenario.uninfected[44].veinsmobility acceleration ETV
+vector 228 Sim2Scenario.uninfected[44].veinsmobility co2emission ETV
+vector 229 Sim2Scenario.uninfected[45].veinsmobility speed ETV
+vector 230 Sim2Scenario.uninfected[47].veinsmobility posx ETV
+vector 231 Sim2Scenario.uninfected[47].veinsmobility posy ETV
+vector 232 Sim2Scenario.uninfected[45].veinsmobility acceleration ETV
+vector 233 Sim2Scenario.uninfected[45].veinsmobility co2emission ETV
+vector 234 Sim2Scenario.uninfected[46].veinsmobility speed ETV
+vector 235 Sim2Scenario.uninfected[48].veinsmobility posx ETV
+vector 236 Sim2Scenario.uninfected[48].veinsmobility posy ETV
+vector 237 Sim2Scenario.uninfected[46].veinsmobility acceleration ETV
+vector 238 Sim2Scenario.uninfected[46].veinsmobility co2emission ETV
+vector 239 Sim2Scenario.uninfected[47].veinsmobility speed ETV
+vector 240 Sim2Scenario.uninfected[49].veinsmobility posx ETV
+vector 241 Sim2Scenario.uninfected[49].veinsmobility posy ETV
+vector 242 Sim2Scenario.uninfected[47].veinsmobility acceleration ETV
+vector 243 Sim2Scenario.uninfected[47].veinsmobility co2emission ETV
+vector 244 Sim2Scenario.uninfected[48].veinsmobility speed ETV
+vector 245 Sim2Scenario.uninfected[48].veinsmobility acceleration ETV
+vector 246 Sim2Scenario.uninfected[48].veinsmobility co2emission ETV
+vector 247 Sim2Scenario.uninfected[49].veinsmobility speed ETV
+23	21047 1145 7 52 6 51 46 0.973 8.0209828473551 131.15079257426 543.69823416299
+22	22192 1267 7 52 6 51 46 -3.3188026039673 2.2626646912354 9.7017864311674 63.640971278701
+19	23459 1206 6 52 5 51 47 4.1837425248161 13.888416356484 576.10937176731 7460.6792997137
+11	24665 1088 5 52 4 51 48 223.4 611.63399887184 17318.047145702 7178742.3387621
+10	25753 915 5 52 4 51 48 40.963665082662 226.6 9522.2836365085 2022934.0703993
+vector 248 Sim2Scenario.uninfected[50].veinsmobility posx ETV
+vector 249 Sim2Scenario.uninfected[50].veinsmobility posy ETV
+vector 250 Sim2Scenario.uninfected[51].veinsmobility posx ETV
+vector 251 Sim2Scenario.uninfected[51].veinsmobility posy ETV
+vector 252 Sim2Scenario.uninfected[49].veinsmobility acceleration ETV
+vector 253 Sim2Scenario.uninfected[49].veinsmobility co2emission ETV
+vector 254 Sim2Scenario.exploited[52].veinsmobility posx ETV
+vector 255 Sim2Scenario.exploited[52].veinsmobility posy ETV
+vector 256 Sim2Scenario.uninfected[50].veinsmobility speed ETV
+vector 257 Sim2Scenario.uninfected[51].veinsmobility speed ETV
+vector 258 Sim2Scenario.uninfected[50].veinsmobility acceleration ETV
+vector 259 Sim2Scenario.uninfected[50].veinsmobility co2emission ETV
+vector 260 Sim2Scenario.uninfected[51].veinsmobility acceleration ETV
+vector 261 Sim2Scenario.uninfected[51].veinsmobility co2emission ETV
+vector 262 Sim2Scenario.exploited[52].veinsmobility speed ETV
+vector 263 Sim2Scenario.uninfected[53].veinsmobility posx ETV
+vector 264 Sim2Scenario.uninfected[53].veinsmobility posy ETV
+vector 265 Sim2Scenario.exploited[52].veinsmobility acceleration ETV
+vector 266 Sim2Scenario.exploited[52].veinsmobility co2emission ETV
+vector 267 Sim2Scenario.exploited[54].veinsmobility posx ETV
+vector 268 Sim2Scenario.exploited[54].veinsmobility posy ETV
+vector 269 Sim2Scenario.uninfected[53].veinsmobility speed ETV
+vector 270 Sim2Scenario.uninfected[55].veinsmobility posx ETV
+vector 271 Sim2Scenario.uninfected[55].veinsmobility posy ETV
+vector 272 Sim2Scenario.uninfected[53].veinsmobility acceleration ETV
+vector 273 Sim2Scenario.uninfected[53].veinsmobility co2emission ETV
+vector 274 Sim2Scenario.exploited[54].veinsmobility speed ETV
+vector 275 Sim2Scenario.uninfected[56].veinsmobility posx ETV
+vector 276 Sim2Scenario.uninfected[56].veinsmobility posy ETV
+vector 277 Sim2Scenario.exploited[54].veinsmobility acceleration ETV
+vector 278 Sim2Scenario.exploited[54].veinsmobility co2emission ETV
+vector 279 Sim2Scenario.uninfected[55].veinsmobility speed ETV
+vector 280 Sim2Scenario.uninfected[57].veinsmobility posx ETV
+vector 281 Sim2Scenario.uninfected[57].veinsmobility posy ETV
+vector 282 Sim2Scenario.uninfected[55].veinsmobility acceleration ETV
+vector 283 Sim2Scenario.uninfected[55].veinsmobility co2emission ETV
+vector 284 Sim2Scenario.uninfected[56].veinsmobility speed ETV
+vector 285 Sim2Scenario.uninfected[58].veinsmobility posx ETV
+vector 286 Sim2Scenario.uninfected[58].veinsmobility posy ETV
+vector 287 Sim2Scenario.uninfected[59].veinsmobility posx ETV
+vector 288 Sim2Scenario.uninfected[59].veinsmobility posy ETV
+vector 289 Sim2Scenario.uninfected[56].veinsmobility acceleration ETV
+vector 290 Sim2Scenario.uninfected[56].veinsmobility co2emission ETV
+vector 291 Sim2Scenario.uninfected[57].veinsmobility speed ETV
+vector 292 Sim2Scenario.uninfected[60].veinsmobility posx ETV
+vector 293 Sim2Scenario.uninfected[60].veinsmobility posy ETV
+vector 294 Sim2Scenario.uninfected[57].veinsmobility acceleration ETV
+vector 295 Sim2Scenario.uninfected[57].veinsmobility co2emission ETV
+vector 296 Sim2Scenario.uninfected[58].veinsmobility speed ETV
+vector 297 Sim2Scenario.uninfected[59].veinsmobility speed ETV
+53	29953 1227 13 62 12 61 50 0.973 8.3916367649199 156.80464516604 731.1820925608
+52	31180 1370 13 62 12 61 50 -3.355442694288 2.1179010292981 9.8259926062364 109.83213574634
+49	32550 1321 12 62 11 61 51 3.5621496864848 13.887274319187 575.93308594475 7083.3423497391
+41	33871 1189 11 62 10 61 52 438.35435812088 815.01378516943 32135.018901886 20292568.155547
+40	35060 1028 11 62 10 61 52 423.4 623.4 26998.507549721 14431455.054212
+vector 298 Sim2Scenario.uninfected[61].veinsmobility posx ETV
+vector 299 Sim2Scenario.uninfected[61].veinsmobility posy ETV
+vector 300 Sim2Scenario.uninfected[58].veinsmobility acceleration ETV
+vector 301 Sim2Scenario.uninfected[58].veinsmobility co2emission ETV
+vector 302 Sim2Scenario.uninfected[59].veinsmobility acceleration ETV
+vector 303 Sim2Scenario.uninfected[59].veinsmobility co2emission ETV
+vector 304 Sim2Scenario.uninfected[60].veinsmobility speed ETV
+73	36560 1179 17 63 16 62 47 0.973 8.4289382751256 133.86330881384 548.07168403824
+72	37739 1302 17 63 16 62 47 -4.4378103577699 2.0562678857078 10.054449167529 69.087808111377
+69	39041 1241 16 63 15 62 48 3.8004325452788 13.889763465817 579.17813187746 7430.2116121919
+61	40282 1092 15 63 14 62 49 26.6 411.64691181547 7869.157048183 2206013.0602144
+60	41374 911 15 63 14 62 49 26.6 215.99665397546 2718.2047194401 292549.42638738
+8	42285 1452 4 63 3 62 60 0.973 8.4055474696849 161.27984760855 612.22100786781
+7	43737 1607 4 63 3 62 60 -4.4742306211542 2.1980462150532 10.058768241004 72.707762233352
+4	45344 1499 3 63 2 62 61 3.722822103166 13.882528818171 768.33703732052 10125.270501021
+1	46843 1024 2 63 1 62 62 26.6 205.8570316518 2925.8687523518 267642.54071181
+0	47867 1377 2 63 1 62 62 238.33130028169 823.4 36883.815286263 24562116.449966
+vector 305 Sim2Scenario.uninfected[60].veinsmobility acceleration ETV
+vector 306 Sim2Scenario.uninfected[60].veinsmobility co2emission ETV
+vector 307 Sim2Scenario.uninfected[61].veinsmobility speed ETV
+vector 308 Sim2Scenario.uninfected[62].veinsmobility posx ETV
+vector 309 Sim2Scenario.uninfected[62].veinsmobility posy ETV
+vector 310 Sim2Scenario.uninfected[61].veinsmobility acceleration ETV
+vector 311 Sim2Scenario.uninfected[61].veinsmobility co2emission ETV
+88	49716 1150 20 65 19 64 46 0.973 8.2358515529932 131.90328068092 556.12009348721
+87	50866 1280 20 65 19 64 46 -3.3360943807475 2.2415648450074 9.7492883084873 64.921569726473
+84	52146 1216 19 65 18 64 47 4.1265234313304 13.882503290304 574.54128091163 7430.1325672934
+76	53362 894 18 65 17 64 48 23.4 207.45692349137 2455.968231674 256622.41941575
+75	54256 1103 18 65 17 64 48 223.4 611.61862955957 17344.568134053 7199869.1546769
+vector 312 Sim2Scenario.uninfected[63].veinsmobility posx ETV
+vector 313 Sim2Scenario.uninfected[63].veinsmobility posy ETV
+vector 314 Sim2Scenario.exploited[64].veinsmobility posx ETV
+vector 315 Sim2Scenario.exploited[64].veinsmobility posy ETV
+vector 316 Sim2Scenario.uninfected[62].veinsmobility speed ETV
+vector 317 Sim2Scenario.uninfected[65].veinsmobility posx ETV
+vector 318 Sim2Scenario.uninfected[65].veinsmobility posy ETV
+vector 319 Sim2Scenario.uninfected[62].veinsmobility acceleration ETV
+vector 320 Sim2Scenario.uninfected[62].veinsmobility co2emission ETV
+vector 321 Sim2Scenario.uninfected[63].veinsmobility speed ETV
+vector 322 Sim2Scenario.exploited[64].veinsmobility speed ETV
+vector 323 Sim2Scenario.uninfected[66].veinsmobility posx ETV
+vector 324 Sim2Scenario.uninfected[66].veinsmobility posy ETV
+vector 325 Sim2Scenario.uninfected[63].veinsmobility acceleration ETV
+vector 326 Sim2Scenario.uninfected[63].veinsmobility co2emission ETV
+vector 327 Sim2Scenario.exploited[64].veinsmobility acceleration ETV
+vector 328 Sim2Scenario.exploited[64].veinsmobility co2emission ETV
+vector 329 Sim2Scenario.uninfected[65].veinsmobility speed ETV
+vector 330 Sim2Scenario.uninfected[67].veinsmobility posx ETV
+vector 331 Sim2Scenario.uninfected[67].veinsmobility posy ETV
+vector 332 Sim2Scenario.uninfected[65].veinsmobility acceleration ETV
+vector 333 Sim2Scenario.uninfected[65].veinsmobility co2emission ETV
+vector 334 Sim2Scenario.uninfected[66].veinsmobility speed ETV
+vector 335 Sim2Scenario.uninfected[68].veinsmobility posx ETV
+vector 336 Sim2Scenario.uninfected[68].veinsmobility posy ETV
+vector 337 Sim2Scenario.uninfected[66].veinsmobility acceleration ETV
+vector 338 Sim2Scenario.uninfected[66].veinsmobility co2emission ETV
+vector 339 Sim2Scenario.uninfected[67].veinsmobility speed ETV
+vector 340 Sim2Scenario.exploited[69].veinsmobility posx ETV
+vector 341 Sim2Scenario.exploited[69].veinsmobility posy ETV
+vector 342 Sim2Scenario.uninfected[67].veinsmobility acceleration ETV
+vector 343 Sim2Scenario.uninfected[67].veinsmobility co2emission ETV
+vector 344 Sim2Scenario.uninfected[68].veinsmobility speed ETV
+18	57528 1605 6 71 5 70 66 0.973 8.2332987577029 205.89275172096 956.14491373576
+17	59133 1803 6 71 5 70 66 -4.4851412721979 2.5619180149538 9.7829082326213 154.91951038343
+14	60936 1727 5 71 4 70 67 3.3176953228269 13.884849982031 764.0281340528 9429.213401873
+6	62663 1340 4 71 3 70 68 438.34775942317 623.4 39302.996479442 22986729.360091
+5	64003 1371 4 71 3 70 68 26.6 423.4 15554.066922548 5327331.5843098
+vector 345 Sim2Scenario.uninfected[68].veinsmobility acceleration ETV
+vector 346 Sim2Scenario.uninfected[68].veinsmobility co2emission ETV
+vector 347 Sim2Scenario.exploited[69].veinsmobility speed ETV
+vector 348 Sim2Scenario.uninfected[70].veinsmobility posx ETV
+vector 349 Sim2Scenario.uninfected[70].veinsmobility posy ETV
+vector 350 Sim2Scenario.uninfected[71].veinsmobility posx ETV
+vector 351 Sim2Scenario.uninfected[71].veinsmobility posy ETV
+vector 352 Sim2Scenario.exploited[69].veinsmobility acceleration ETV
+vector 353 Sim2Scenario.exploited[69].veinsmobility co2emission ETV
+33	65969 1588 9 73 8 72 65 0.973 8.9859220848101 186.01210493343 797.24503678042
+32	67557 1799 9 73 8 72 65 -3.4370351042505 2.3457853516634 9.8871315484824 111.81020004765
+29	69356 1703 8 73 7 72 66 3.5229142080061 13.885804472454 763.92442138946 9627.7929915245
+21	71059 1591 7 73 6 72 67 31.356110592024 426.6 16165.182096548 5295256.0928978
+20	72650 1243 7 73 6 72 67 623.4 806.71655435557 43152.658764389 27930964.184769
+vector 354 Sim2Scenario.uninfected[72].veinsmobility posx ETV
+vector 355 Sim2Scenario.uninfected[72].veinsmobility posy ETV
+vector 356 Sim2Scenario.uninfected[70].veinsmobility speed ETV
+vector 357 Sim2Scenario.uninfected[71].veinsmobility speed ETV
+2	74147 1190 3 74 2 73 72 26.6 211.61882214952 3698.0362008712 394143.26352113
+3	75337 1608 3 74 2 73 72 113.06934233229 823.4 40337.092616179 26690135.100064
+9	76945 1758 4 74 3 73 71 3.8605596513442 13.889889416588 899.75003818061 11855.900811865
+12	78703 1941 5 74 4 73 70 -4.4319614915386 2.0955463847006 9.9076458977231 87.041956118466
+13	80644 1752 5 74 4 73 70 0.973 8.8891102605953 190.45463416379 752.99295064673
+15	82396 1288 6 74 5 73 69 426.6 623.4 32283.379535936 15445811.13316
+16	83684 1608 6 74 5 73 69 226.6 811.65841929311 29826.218831371 15801400.01146
+24	85292 1754 7 74 6 73 68 3.0996251721153 13.885657052209 817.02899401624 10491.414830455
+25	87046 1246 8 74 7 73 67 638.76600520096 826.6 53686.282883244 43189824.835057
+26	88292 1572 8 74 7 73 67 230.6489579221 623.4 29551.84576535 14399658.599759
+27	89864 1871 8 74 7 73 67 -4.0406378441723 2.2225296193827 8.4817310921051 108.27533107374
+28	91735 1667 8 74 7 73 67 0.973 8.269885686356 186.0940916881 769.27127577388
+30	93402 1552 9 74 8 73 66 426.6 619.15516666416 33589.208606028 17419435.059546
+31	94954 1231 9 74 8 73 66 623.4 823.4 46363.917664928 33088409.396406
+34	96185 1704 9 74 8 73 66 3.6002013733028 13.886526254779 759.45744175868 9455.6985895368
+35	97889 1375 10 74 9 73 65 461.39752282222 811.64220992029 41427.932328398 26768654.364642
+36	99264 1364 10 74 9 73 65 23.4 423.4 15381.531519639 5434587.1540709
+37	100628 1785 10 74 9 73 65 -4.3678160246992 2.187110120079 0.69940776677121 146.5090439657
+38	102413 1556 10 74 9 73 65 0.973 8.2772551057279 190.20356993369 882.45318324357
+39	103969 1680 10 74 9 73 65 3.6270036264462 13.877270556565 733.96584338373 9012.4673754076
+42	105649 1753 11 74 10 73 64 -4.4726458723443 2.2768419297854 8.5777998376504 145.78504008084
+43	107402 1541 11 74 10 73 64 0.973 8.5290299308371 196.20581882226 920.80095613173
+44	108943 1657 11 74 10 73 64 3.5946160302825 13.889501384608 748.47932536884 9405.4012290955
+45	110600 1565 12 74 11 73 63 226.6 811.61667995088 30615.248411643 17220549.753617
+46	112165 1098 12 74 11 73 63 537.51683343538 623.4 38943.826039809 24091176.833877
+47	113263 1743 12 74 11 73 63 -3.2153195784046 2.3903803224303 7.188533860005 120.60399744534
+48	115006 1544 12 74 11 73 63 0.973 8.2641879631422 182.59757227376 800.71634877186
+50	116550 1350 13 74 12 73 62 226.6 419.33045742646 17674.845147213 5335550.5898183
+51	117900 1269 13 74 12 73 62 482.91165604794 826.6 46727.608849878 35926860.322198
+54	119169 1604 13 74 12 73 62 3.4423509383507 13.882109054266 673.41181444551 8066.2797905703
+55	120773 1125 14 74 13 73 61 623.4 788.50508170188 39111.637433876 25180932.795456
+56	121898 1461 14 74 13 73 61 38.36469348464 626.6 23964.466604239 11986632.414299
+57	123359 1664 14 74 13 73 61 -3.1574405016875 2.4827399817482 9.8841492518854 155.29005281383
+58	125023 1452 14 74 13 73 61 0.973 8.7853057562305 197.30200192917 973.8701094494
+59	126475 1567 14 74 13 73 61 3.5885107131671 13.888562554053 718.95188093691 9115.094228719
+62	128042 1656 15 74 14 73 60 -4.442733806076 2.1352196676121 9.8184246544899 103.08357798578
+63	129698 1489 15 74 14 73 60 0.973 8.6364354675409 174.71147386338 766.01097446546
+64	131187 1556 15 74 14 73 60 3.3973366077989 13.888971277256 754.82236619882 9934.8306886216
+65	132743 1339 16 74 15 73 59 31.651835111532 226.6 9500.9673712647 1825559.8256985
+66	134082 1168 16 74 15 73 59 396.54477097857 626.6 34451.289537057 20406172.996221
+67	135250 1638 16 74 15 73 59 -3.1607996680653 2.5301911424333 9.8132023122681 69.645539023219
+68	136888 1491 16 74 15 73 59 0.973 8.4722664279242 159.61489560297 623.23986745192
+70	138379 1362 17 74 16 73 58 215.92981520965 611.63982373774 24185.493461449 10684905.032193
+71	139741 1117 17 74 16 73 58 423.4 623.4 30126.953436571 16127446.602202
+74	140858 1501 17 74 16 73 58 2.8013693035055 13.886808744448 609.99801941578 7182.9423115197
+77	142359 1554 18 74 17 73 57 -3.1591739660043 2.2995617746771 9.8444255235878 140.91093826769
+78	143913 1345 18 74 17 73 57 0.973 9.347352072338 183.71599583928 894.17137144379
+79	145258 1478 18 74 17 73 57 0.53709502093064 13.8870143887 593.07096462188 7091.6049361387
+80	146736 1214 19 74 18 73 56 226.6 623.4 26402.632840473 13769295.100349
+81	147950 1165 19 74 18 73 56 638.36918907269 823.4 44100.651593275 34916318.232904
+82	149115 1519 19 74 18 73 56 -4.5 2.5033490096172 5.6622562489086 164.12404382654
+83	150634 1334 19 74 18 73 56 0.973 8.4954785182148 174.27035281032 823.8625473592
+85	151968 1067 20 74 19 73 55 223.4 411.64642465614 14219.272331307 3866915.6959364
+86	153035 1267 20 74 19 73 55 431.01047080496 823.4 36601.766260554 25618487.438402
+89	154302 1422 20 74 19 73 55 3.8093035120389 13.882726848784 645.25332024944 8109.2323642316
+90	155724 1042 21 74 20 73 54 638.36802778031 826.6 42808.74370741 34133190.772247
+91	156766 1230 21 74 20 73 54 347.30421033532 826.6 36068.692002936 25503243.576071
+92	157996 1482 21 74 20 73 54 -4.5 2.3399011120154 9.8275947778127 104.02497639546
+93	159478 1326 21 74 20 73 54 0.973 8.560646659091 162.77367919056 739.77588494481
+94	160804 1401 21 74 20 73 54 3.6172514760634 13.88748094046 621.47412306744 7760.6050691956
+95	162205 886 22 74 21 73 53 810.2968117076 826.6 43723.964127591 36071801.50073
+96	163091 1349 22 74 21 73 53 23.4 419.34332813117 13456.607959481 4229484.2045587
+97	164440 1466 22 74 21 73 53 -4.4712321171188 2.1250076595368 8.5014941525299 105.97993416174
+98	165906 1302 22 74 21 73 53 0.973 8.4276133863084 156.85396407854 694.31872791613
+99	167208 1373 22 74 21 73 53 4.1836085551388 13.886151023735 670.93046719529 8823.2345493347
+100	168581 1244 23 74 22 73 52 238.35795385615 607.77862132404 21601.985243207 9389821.896587
+101	169825 1067 23 74 22 73 52 26.6 226.6 6871.520160834 1321457.6749444
+102	170892 1493 23 74 22 73 52 -4.5 2.0699351865519 9.6233161880432 57.781581484808
+103	172385 1370 23 74 22 73 52 0.973 8.7095743379261 142.2412156927 556.94786109363
+104	173755 1387 23 74 22 73 52 3.6168500979611 13.885193817336 596.21514362619 7452.0893866593
+105	175142 1312 24 74 23 73 51 431.57583351548 617.725 27566.524724412 15152533.273008
+106	176454 887 24 74 23 73 51 623.4 626.6 31889.383251797 19939982.34787
+107	177341 1459 24 74 23 73 51 -4.4649177307171 2.0968713512481 4.9218900189023 95.571240361598
+108	178800 1301 24 74 23 73 51 0.973 8.3662011473238 143.1619201034 599.25332627817
+109	180101 1374 24 74 23 73 51 3.5423361058903 13.889317078406 568.9538106337 6941.7317954374
+112	181475 1420 25 74 24 73 50 -3.2084025583017 2.5059182305308 9.839571827394 110.84212082002
+113	182895 1266 25 74 24 73 50 0.973 8.2909371665769 157.37232127467 725.53388839926
+114	184161 1241 25 74 24 73 50 0 13.882030911413 368.52155985084 4219.9195368194
+115	185402 795 26 74 25 73 49 23.4 26.6 1205.878980287 29791.835252238
+116	186197 1319 26 74 25 73 49 430.63949014352 810.62771236104 28260.566756179 16883159.099312
+117	187516 1275 26 74 25 73 49 -3.1173637429796 2.0289791903808 -3.8502625330982 100.7900079711
+118	188791 1092 26 74 25 73 49 0.973 8.4478380784518 119.18232043276 497.95707308267
+120	189883 1108 27 74 26 73 48 26.6 413.64296727742 6912.4152252951 1807863.2768187
+121	190991 965 27 74 26 73 48 26.6 211.63679302406 3057.1993977314 376514.73101918
+124	191956 1282 27 74 26 73 48 3.5078264561924 13.887267420811 567.27332640231 7254.9442519772
+125	193238 986 28 74 27 73 47 226.6 423.4 14835.137357358 5032743.1148648
+126	194224 1096 28 74 27 73 47 226.6 411.65612850826 13224.008724035 3904030.7277167
+127	195320 1351 28 74 27 73 47 -3.135537052064 2.2232572488766 9.9320166478425 66.691163218169
+128	196671 1221 28 74 27 73 47 0.973 8.6453453187798 133.85719689626 566.38659192374
+129	197892 1265 28 74 27 73 47 3.7817838354851 13.889716829786 575.85747902307 7460.7068937606
+130	199157 960 29 74 28 73 46 426.6 623.4 23322.621912818 12159256.733506
+131	200117 1085 29 74 28 73 46 26.6 211.60919201972 3689.037429189 469225.96654332
+132	201202 1310 29 74 28 73 46 -4.4411461237276 1.9945206996193 9.756918068606 71.493453672418
+133	202512 1207 29 74 28 73 46 0.973 7.9328693521324 132.92481025791 539.80171540902
+134	203719 1240 29 74 28 73 46 3.5373828112096 13.887915906974 520.00815981077 6370.8832619293
+135	204959 1164 30 74 29 73 45 238.34178212999 419.14426873706 15623.726047303 5617231.8384582
+136	206123 775 30 74 29 73 45 623.4 626.6 28141.511462526 17598877.229751
+137	206898 1280 30 74 29 73 45 -4.4723523406731 2.1951974842628 9.9239320009656 103.24028488744
+138	208178 1134 30 74 29 73 45 0.973 9.1104217018551 144.87527855117 694.66640213614
+139	209312 1208 30 74 29 73 45 3.9616111245746 13.87603409678 508.52467733767 6224.2181884807
+140	210520 947 31 74 30 73 44 223.4 411.64209468631 11689.84946555 3285559.6696466
+141	211467 1007 31 74 30 73 44 423.4 747.94428554819 22615.406095291 12140612.6802
+142	212474 1257 31 74 30 73 44 -4.3963258650393 2.2543822468089 9.8962034723425 106.27883233073
+143	213731 1121 31 74 30 73 44 0.973 8.9467829460454 143.83785413575 701.14721079749
+144	214852 1105 31 74 30 73 44 0 13.884208573855 362.97431145588 4216.2098037456
+145	215957 931 32 74 31 73 43 438.37556380769 623.4 24998.181936351 14705377.563668
+146	216888 978 32 74 31 73 43 226.6 535.23213436325 13363.86579473 4606296.655528
+147	217866 1135 32 74 31 73 43 -3.05460234515 2.2435687509719 1.3049802986215 96.649745627578
+148	219001 989 32 74 31 73 43 0.973 8.1190995346742 112.6910958364 488.11113562049
+149	219990 1155 32 74 31 73 43 4.0905459865657 13.880654598561 514.29511771193 6558.5900104797
+150	221145 724 33 74 32 73 42 623.4 626.6 26257.532950463 16415771.366214
+151	221869 1128 33 74 32 73 42 336.44767593812 619.16647523162 21209.90994052 10985434.934096
+152	222997 1205 33 74 32 73 42 -3.1797786541243 2.3696890860586 9.687077676949 63.989283440183
+153	224202 1090 33 74 32 73 42 0.973 8.8201189077618 123.61688738901 524.24551581268
+154	225292 1129 33 74 32 73 42 3.9872304839682 13.881401058221 497.06342132782 6310.5039129135
+155	226421 915 34 74 33 73 41 238.38965383801 426.6 15635.048355833 6136827.325263
+156	227336 934 34 74 33 73 41 583.48187435527 826.6 31598.393404758 24601576.991405
+157	228270 1178 34 74 33 73 41 -3.0756911721329 2.2086687324076 9.8286454343313 64.657630972551
+158	229448 1061 34 74 33 73 41 0.973 8.4040478306367 121.33499368023 536.74777371707
+159	230509 1090 34 74 33 73 41 3.3255649295485 13.878186564879 470.07905365844 5908.6306837001
+160	231599 680 35 74 34 73 40 826.6 826.6 33064 27330702.4
+161	232279 1075 35 74 34 73 40 105.52254281044 611.63318202506 14924.122432205 6547523.9091529
+162	233354 1146 35 74 34 73 40 -3.1308413206088 2.0934671937558 9.7902657097742 65.602190871
+163	234500 1034 35 74 34 73 40 0.973 8.5766968536417 118.87329522416 523.78271627858
+164	235534 1079 35 74 34 73 40 0.8722178822637 13.889567791808 433.1593479328 5383.7873207298
+165	236613 838 36 74 35 73 39 438.36223260079 623.4 22529.404287102 13181340.803554
+166	237451 873 36 74 35 73 39 26.6 303.50934706064 3968.2718570787 734935.18786902
+167	238324 1112 36 74 35 73 39 -3.2922458789543 2.1391695374483 9.8618416351972 75.153740654418
+168	239436 991 36 74 35 73 39 0.973 8.7859659920956 116.89350395072 531.17101014187
+169	240427 1047 36 74 35 73 39 4.1527076517452 13.885444280603 511.18486365313 6877.2070855684
+170	241474 1022 37 74 36 73 38 430.86631149981 811.66942286851 23451.590491491 15045869.618102
+171	242496 656 37 74 36 73 38 623.4 626.6 23693.467377 14773179.224938
+172	243152 1103 37 74 36 73 38 -0.11188085003523 2.1716121752001 9.6083343860962 19.10366327748
+173	244255 1020 37 74 36 73 38 1.6435177989577 8.03040465033 98.323688330428 345.69029970446
+174	245275 1023 37 74 36 73 38 4.014909056375 13.889471060962 464.53136755561 5972.9476277923
+175	246298 808 38 74 37 73 37 626.6 823.4 28422.841598617 22026218.223235
+176	247106 838 38 74 37 73 37 638.32685156935 823.4 28638.910593277 22329337.348079
+177	247944 1061 38 74 37 73 37 -4.4886295501678 1.99311729901 9.7801559034723 59.289536770355
+178	249005 977 38 74 37 73 37 0.973 8.2520786092609 111.94943506829 487.20440264304
+179	249982 998 38 74 37 73 37 3.5337814227655 13.889831382905 386.52518804907 4585.2297355598
+180	250980 612 39 74 38 73 36 623.4 623.4 22442.4 13990592.16
+181	251592 970 39 74 38 73 36 38.389116823078 447.96791817629 8443.64664993 2564498.6844137
+182	252562 1019 39 74 38 73 36 -3.2479678591981 2.342380305503 -0.15594666707203 94.515571444455
+183	253581 881 39 74 38 73 36 0.973 8.7359699486349 106.11544172724 503.31840405524
+184	254462 962 39 74 38 73 36 3.7180462797528 13.879519862598 397.47246002337 4806.7863644247
+185	255424 942 40 74 39 73 35 38.337922191965 411.24088679252 7580.5317890563 2104108.1054668
+186	256366 595 40 74 39 73 35 426.6 426.6 14931 6369564.6
+187	256961 984 40 74 39 73 35 -4.4973848274443 2.1317927793786 5.2306701225292 103.07444540275
+188	257945 881 40 74 39 73 35 0.973 8.9900662044285 112.19040845838 533.78581297553
+189	258826 943 40 74 39 73 35 4.001442424085 13.882353288957 415.15077848003 5151.9778685046
+190	259769 754 41 74 40 73 34 638.39079950746 826.6 26251.225356777 20430075.657174
+191	260523 743 41 74 40 73 34 635.89368484202 826.6 26538.565973789 20853442.844202
+192	261266 959 41 74 40 73 34 -3.2601261038233 2.1511138456408 9.8208365141782 59.34849661715
+193	262225 867 41 74 40 73 34 0.973 9.1702128466764 112.56081857019 544.11104620838
+194	263092 916 41 74 40 73 34 3.7415462724258 13.883403561295 373.80630636321 4530.4845371766
+195	264008 571 42 74 41 73 33 223.4 226.6 7418.861650971 1667944.7313982
+196	264579 889 42 74 41 73 33 38.387438300261 219.26917451452 4492.7365710165 727522.9927433
+197	265468 936 42 74 41 73 33 -3.3283773789653 2.3569873144012 0.84606876275393 94.208276091725
+198	266404 817 42 74 41 73 33 0.973 8.2595892950099 102.67999725683 497.34657555188
+199	267221 889 42 74 41 73 33 3.9667679551265 13.885503359863 378.14794541989 4650.7920487856
+200	268110 910 43 74 42 73 32 -4.4456413999983 1.9531425738591 2.1705362171301 78.217028535951
+201	269020 802 43 74 42 73 32 0.973 8.0569202887857 98.434542683847 454.05919511394
+202	269822 856 43 74 42 73 32 3.579214250131 13.874843037003 346.94731005779 4193.6093043697
+203	270678 527 44 74 43 73 31 223.4 223.4 6925.4 1547134.36
+204	271205 835 44 74 43 73 31 37.451308881535 375.72536282699 5923.7657206389 1464356.3799926
+205	272040 714 44 74 43 73 31 438.35218967679 623.4 17534.943339912 10060701.840045
+206	272754 656 44 74 43 73 31 226.6 370.83938297729 7868.953053798 2057889.8217178
+207	273410 878 44 74 43 73 31 -3.1838393834574 2.0598718653456 7.7590441661542 67.366170790466
+208	274288 777 44 74 43 73 31 0.973 7.7991259924088 99.413871267692 481.50316190815
+209	275065 808 45 74 44 73 30 238.38828660037 419.34472279931 10281.595691911 3626270.0586324
+210	275873 520 45 74 44 73 30 823.4 826.6 24761.089445599 20437121.83746
+211	276393 806 45 74 44 73 30 3.0370810326166 13.886921987447 343.96210780088 4251.8324200109
+212	277199 808 45 74 44 73 30 4.1125322051526 13.884368328969 332.53384924557 4040.3014450281
+213	278007 780 46 74 45 73 29 34.375117776587 385.49653687274 5659.8225531014 1461750.0784718
+214	278787 493 46 74 45 73 29 826.6 826.6 23971.4 19814759.24
+215	279280 813 46 74 45 73 29 -2.6585452524283 2.1429825062538 10.769501853909 48.795041977321
+216	280093 732 46 74 45 73 29 0.973 8.5359168829232 94.373133800496 459.25272169153
+217	280825 818 46 74 45 73 29 -3.3211367488196 2.095572713397 9.724800920564 64.947327773432
+218	281643 739 46 74 45 73 29 0.973 8.3226797083112 96.936399428795 481.12861459756
+219	282382 781 46 74 45 73 29 3.5684427641658 13.884288750172 305.00291741258 3621.5996038532
+220	283163 568 47 74 46 73 28 26.6 150.99971004413 1385.241409627 108637.24745923
+221	283731 654 47 74 46 73 28 226.6 411.6321702692 8130.3678481108 2495522.3436518
+222	284385 793 47 74 46 73 28 -3.1366179575867 2.0432770088897 9.7593699024758 62.525950470316
+223	285178 704 47 74 46 73 28 0.973 8.1868509406293 94.358347760269 466.48911054481
+224	285882 755 47 74 46 73 28 4.0514964356029 13.889670290884 356.28655446171 4720.2622929648
+225	286637 459 48 74 47 73 27 626.6 626.6 16918.2 10600944.12
+226	287096 728 48 74 47 73 27 486.52506696329 811.65455643876 17903.297635806 12158231.92494
+227	287824 781 48 74 47 73 27 -0.10769130534958 2.0564233272406 9.7502875962585 18.027322232379
+228	288605 726 48 74 47 73 27 1.658979111291 8.4480963136712 75.988924222381 294.38243062913
+229	289331 727 48 74 47 73 27 4.0766830037938 13.867138445645 312.04473005548 3864.7559772186
+230	290058 661 49 74 48 73 26 438.36994953606 617.699 14348.478969512 8035528.6956515
+231	290719 442 49 74 48 73 26 426.6 426.6 11091.6 4731676.56
+232	291161 731 49 74 48 73 26 -4.5 2.1119929792197 9.7206172183474 59.3997113767
+233	291892 681 49 74 48 73 26 0.973 8.5327969721987 89.761815739723 445.3657261058
+234	292573 699 49 74 48 73 26 4.0558836507462 13.887791936425 330.49113338908 4376.9364992473
+235	293272 672 50 74 49 73 25 558.33221246414 811.63186995971 17234.569473967 12036867.267258
+236	293944 425 50 74 49 73 25 623.4 623.4 15585 9715689
+237	294369 725 50 74 49 73 25 -0.084530947033782 2.0669553387002 9.7529587415778 19.180134388172
+238	295094 670 50 74 49 73 25 1.7346837650638 8.0703987154935 72.254244121317 295.70216097611
+239	295764 626 50 74 49 73 25 0 13.870494243132 178.60579616581 2084.4151817965
+240	296390 418 51 74 50 73 24 423.4 426.6 10223.87407609 4355351.860533
+241	296808 648 51 74 50 73 24 30.662961955177 212.62472016043 2618.6457447747 391552.91822724
+242	297456 640 51 74 50 73 24 -3.1250982502921 2.0616446317593 -3.8620691063209 52.703321439692
+243	298096 525 51 74 50 73 24 0.973 8.7828392287848 57.898564625976 253.02915795543
+244	298621 642 51 74 50 73 24 4.0336828010034 13.868388129089 258.75516973513 3083.3081159247
+245	299263 650 52 74 51 73 23 -3.3275160373824 2.3356007177709 9.7439692595817 66.318033864843
+246	299913 578 52 74 51 73 23 0.973 8.2398725508285 85.083390149513 455.52364886912
+247	300491 619 52 74 51 73 23 2.6363864045584 13.863997030111 212.79880386212 2340.7622683953
+248	301110 423 53 74 52 73 22 589.56919652508 623.4 13637.633180827 8455481.9511732
+249	301533 551 53 74 52 73 22 237.45052724309 423.4 7430.7522503651 2615846.3794614
+250	302084 570 53 74 52 73 22 26.6 211.66674457564 2410.4063183222 364196.6152232
+251	302654 414 53 74 52 73 22 402.82014866089 423.4 9277.6021454493 3912969.7516373
+252	303068 620 53 74 52 73 22 -3.3827151098988 2.2171394860744 7.5571461328079 62.345169792171
+253	303688 544 53 74 52 73 22 0.973 8.4918787814464 72.301733660462 346.02819482217
+254	304232 563 54 74 53 73 21 430.72491813763 611.64939258264 10775.374323879 5620880.3005566
+255	304795 369 54 74 53 73 21 23.4 24.750163724749 493.97357382727 11621.969268502
+256	305164 567 54 74 53 73 21 2.8763442045643 13.888631774541 222.82806337031 2619.9015052794
+257	305731 565 54 74 53 73 21 3.8849071331797 13.886040555977 207.19307368887 2318.8249768135
+258	306296 563 55 74 54 73 20 -4.4547244845487 2.1664502256527 9.0434509481227 57.633527412913
+259	306859 509 55 74 54 73 20 0.973 8.5827690531574 71.891772740562 369.07980100574
+260	307368 562 55 74 54 73 20 -3.1023782373954 2.4245119984285 5.7760790404039 56.130057891131
+261	307930 498 55 74 54 73 20 0.973 8.5960604483342 66.641547714579 323.01728372659
+262	308428 538 55 74 54 73 20 0.43498179764778 13.858753481561 180.79564317102 2115.7574576268
+263	308966 511 56 74 55 73 19 603.22300143498 815.64661691165 13730.827792654 10013434.194807
+264	309477 304 56 74 55 73 19 23.4 23.4 444.6 10403.64
+265	309781 538 56 74 55 73 19 -3.1617687047977 2.0572022050922 -3.4090657851524 51.632508602354
+266	310319 441 56 74 55 73 19 0.973 8.3629647430375 52.86502704316 249.96650079212
+267	310760 306 57 74 56 73 18 226.6 226.6 4078.8 924256.08
+268	311066 484 57 74 56 73 18 420.89538373894 612.33123021537 9537.5550854014 5124853.5489416
+269	311550 484 57 74 56 73 18 3.9444519916728 13.851194196229 217.4629250079 2799.2816425788
+270	312034 459 58 74 57 73 17 639.85989389161 816.45102702942 12593.977663972 9388762.0916
+271	312493 289 58 74 57 73 17 823.4 823.4 13997.8 11525788.52
+272	312782 489 58 74 57 73 17 -0.028583697569557 2.0553071450978 9.8973212695152 18.072671299207
+273	313271 458 58 74 57 73 17 1.9221332092122 7.665211708369 55.983905509831 250.24457003491
+274	313729 458 58 74 57 73 17 3.1401399490723 13.836658440526 196.36986241741 2454.1198508448
+275	314187 430 59 74 58 73 16 645.36720131415 811.65228492838 11804.037146234 8758409.6316836
+276	314617 272 59 74 58 73 16 423.4 423.4 6774.4 2868280.96
+277	314889 451 59 74 58 73 16 -0.77983154869549 1.9786328921537 10.630209705807 20.8019175348
+278	315340 411 59 74 58 73 16 0.973 7.9494863789329 55.793293677459 259.50084525047
+279	315751 431 59 74 58 73 16 3.0587708754673 13.889430486427 180.56292440599 2225.1648704132
+280	316182 404 60 74 59 73 15 54.872977676118 211.63205078408 2165.0638662243 352979.71870309
+281	316586 255 60 74 59 73 15 223.4 223.4 3351 748613.4
+282	316841 423 60 74 59 73 15 -1.5381243734559 2.0445967142563 7.6884246462513 24.012630566769
+283	317264 383 60 74 59 73 15 0.973 7.3025640768771 49.629403225074 236.21585737578
+284	317647 404 60 74 59 73 15 3.7818972324052 13.889054601928 168.65399650747 2059.8839824313
+285	318051 374 61 74 60 73 14 268.49577209709 411.6379841284 4909.0021290534 1752985.4104636
+286	318425 238 61 74 60 73 14 623.4 623.4 8727.6 5440785.84
+287	318663 224 61 74 60 73 14 26.6 26.6 372.4 9905.84
+288	318887 375 61 74 60 73 14 65.035750218454 211.62864114944 2087.5933701065 344077.22550972
+289	319262 395 61 74 60 73 14 -3.1329874127034 2.1987351861573 3.8529003816459 39.687184596176
+290	319657 355 61 74 60 73 14 0.973 7.822939025798 48.550675953861 246.85850970688
+291	320012 377 61 74 60 73 14 3.9426925666947 13.884354338381 160.64342699568 1993.0490915824
+292	320389 350 62 74 61 73 13 238.37225903636 369.65303034202 3813.16983304 1143170.5205047
+293	320739 221 62 74 61 73 13 226.6 226.6 2945.8 667518.28
+294	320960 368 62 74 61 73 13 -2.9497539781129 2.1200297126034 6.9783825595661 27.958602638802
+295	321328 339 62 74 61 73 13 0.973 8.3318248811151 47.209524603701 244.56012266666
+296	321667 347 62 74 61 73 13 4.0287312177962 13.88604097649 147.0446238864 1803.3217523235
+297	322014 348 62 74 61 73 13 4.0866278337733 13.876610480247 151.78991195637 1911.2042013302
+298	322362 192 63 74 62 73 12 26.6 26.6 319.2 8490.72
+299	322554 323 63 74 62 73 12 295.81215587821 411.66528497729 4368.9553611634 1608477.5435588
+300	322877 336 63 74 62 73 12 -2.63767706991 2.1573957950016 7.1346661318603 25.388295992378
+301	323213 314 63 74 62 73 12 0.973 7.9679560236597 44.758870145786 231.76810511601
+302	323527 343 63 74 62 73 12 -0.02610216088593 2.1142017982225 9.7858018200869 19.18114677184
+303	323870 322 63 74 62 73 12 1.9311588370145 7.9341632498381 46.236597330687 239.73395900948
+304	324192 324 63 74 62 73 12 3.8698061050244 13.858812800422 136.50205684365 1692.3625141449
+305	324516 311 64 74 63 73 11 -0.045605891523882 2.1850972227985 9.9520051760923 19.668533174964
+306	324827 296 64 74 63 73 11 1.8680039180054 8.071860671779 44.213418082722 237.41545778307
+307	325123 295 64 74 63 73 11 3.8743775155046 13.859822108282 120.97735761739 1468.6119649967
+308	325418 270 65 74 64 73 10 438.36396377408 528.18483634873 4745.9162960236 2261429.5985767
+309	325688 170 65 74 64 73 10 226.6 226.6 2266 513475.6
+310	325858 282 65 74 64 73 10 -0.051732044278179 2.1429517515912 9.8924170928053 18.371252289356
+311	326140 270 65 74 64 73 10 1.8435037752059 7.5433964582118 41.719912054625 221.94942069727
+312	326410 153 66 74 65 73 9 423.4 423.4 3810.6 1613408.04
+313	326563 243 66 74 65 73 9 238.36663486583 315.71465359616 2424.608827429 659293.4393103
+314	326806 153 66 74 65 73 9 626.6 626.6 5639.4 3533648.04
+315	326959 243 66 74 65 73 9 736.37035746412 811.63797165498 7034.434199816 5503855.9960711
+316	327202 242 66 74 65 73 9 3.9760455293873 13.883157313813 94.837042191999 1115.8813448556
+317	327444 136 67 74 66 73 8 826.6 826.6 6612.8 5466140.48
+318	327580 216 67 74 66 73 8 548.72485674016 611.60726673913 4691.9448735071 2755374.6420315
+319	327796 222 67 74 66 73 8 -0.11536284809466 2.0082210178394 9.7917489363311 19.253089797193
+320	328018 216 67 74 66 73 8 1.6324626085266 8.2874583170877 37.802730629104 225.20510978464
+321	328234 213 67 74 66 73 8 4.1263324542361 13.813078906171 82.461463822 950.22128430688
+322	328447 216 67 74 66 73 8 4.0842017949011 13.883631857834 80.47629355529 910.1009962355
+323	328663 189 68 74 67 73 7 362.76301419681 411.63766389812 2745.2375309262 1078556.1617287
+324	328852 119 68 74 67 73 7 823.4 823.4 5763.8 4745912.92
+325	328971 194 68 74 67 73 7 -0.024240575465374 2.0783694387786 9.6625058764691 18.947086690481
+326	329165 189 68 74 67 73 7 1.9368091961958 7.8398989984485 35.763781192604 216.95828403911
+327	329354 188 68 74 67 73 7 0.10725222287467 2.0138367303484 9.7994300629328 18.179022457669
+328	329542 189 68 74 67 73 7 2.3858266074806 8.5977309010216 35.876373029508 215.27253866243
+329	329731 187 68 74 67 73 7 4.2432959168753 13.87033578488 67.950246394176 743.30664568923
+330	329918 162 69 74 68 73 6 375.61540260166 411.59644423507 2381.296638448 946041.1437809
+331	330080 102 69 74 68 73 6 423.4 423.4 2540.4 1075605.36
+332	330182 164 69 74 68 73 6 0.089703739783728 2.0409841470467 9.6270398680052 18.233418461081
+333	330346 162 69 74 68 73 6 2.3254717327298 8.1983426062793 33.747284769379 213.63006889997
+334	330508 162 69 74 68 73 6 4.1395823418634 13.775032342838 54.139112200402 554.73902869586
+335	330670 135 70 74 69 73 5 34.347380757295 58.360454107122 222.32202418933 10258.736430131
+336	330805 80 70 74 69 73 5 26.6 26.6 133 3537.8
+337	330885 135 70 74 69 73 5 1.6932425799797 2.1036493043578 9.6354500009743 18.660849783069
+338	331020 134 70 74 69 73 5 4.2713896193485 7.9809620996355 31.576477178617 208.87630511372
+339	331154 134 70 74 69 73 5 4.1921787767177 11.879355389692 40.394179595313 363.49794450758
+340	331288 68 71 74 70 73 4 226.6 226.6 906.4 205390.24
+341	331356 108 71 74 70 73 4 195.90123055804 211.61121966353 818.96651429007 167817.39653649
+342	331464 108 71 74 70 73 4 1.8468282787665 2.0244288748479 7.6871766129741 14.791847013751
+343	331572 106 71 74 70 73 4 4.2954917080117 7.1252546070695 23.175540085116 138.54464781272
+344	331678 108 71 74 70 73 4 3.9737090226986 9.6332287827322 27.315203118863 204.26562377768
+345	331786 77 72 74 71 73 3 1.852302015 1.9536295230011 5.6595197600336 10.683480364772
+346	331863 81 72 74 71 73 3 4.2059099375507 5.9576089412295 15.168243405798 78.230050290744
+347	331944 81 72 74 71 73 3 4.1371704788945 8.0638220818663 18.272736061908 119.00747528316
+348	332025 34 73 74 72 73 2 226.6 226.6 453.2 102695.12
+349	332059 54 73 74 72 73 2 210.59177534978 212.54889492051 423.14067027028 89525.928576899
+350	332113 54 73 74 72 73 2 438.36337573348 441.53822686756 879.90160260104 387118.4549698
+351	332167 34 73 74 72 73 2 426.6 426.6 853.2 363975.12
+352	332201 53 73 74 72 73 2 1.9345730222529 1.992078580719 3.9266516029718 7.7109498501879
+353	332254 54 73 74 72 73 2 4.2544208298023 5.4188057213573 9.6732265511596 47.463552042871
+354	332308 27 74 74 73 73 1 411.63434975442 411.63434975442 411.63434975442 169442.83789774
+355	332335 17 74 74 73 73 1 423.4 423.4 423.4 179267.56
+356	332352 27 74 74 73 73 1 2.8293971504486 2.8293971504486 2.8293971504486 8.0054882349668
+357	332379 26 74 74 73 73 1 4.139936522817 4.139936522817 4.139936522817 17.139074412954
+
