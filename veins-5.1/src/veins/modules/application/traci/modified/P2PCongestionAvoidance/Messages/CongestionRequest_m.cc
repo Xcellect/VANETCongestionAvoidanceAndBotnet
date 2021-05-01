@@ -1,5 +1,5 @@
 //
-// Generated file, do not edit! Created by nedtool 5.6 from veins/modules/application/traci/modified/CongestionInfoMessage.msg.
+// Generated file, do not edit! Created by nedtool 5.6 from veins/modules/application/traci/modified/P2PCongestionAvoidance/Messages/CongestionRequest.msg.
 //
 
 // Disable warnings about unused variables, empty switch stmts, etc:
@@ -26,7 +26,7 @@
 
 #include <iostream>
 #include <sstream>
-#include "CongestionInfoMessage_m.h"
+#include "CongestionRequest_m.h"
 
 namespace omnetpp {
 
@@ -178,26 +178,27 @@ inline std::ostream& operator<<(std::ostream& out, const std::vector<T,A>& vec)
     return out;
 }
 
-Register_Class(CongestionInfoMessage)
+Register_Class(CongestionRequest)
 
-CongestionInfoMessage::CongestionInfoMessage(const char *name, short kind) : ::veins::BaseFrame1609_4(name,kind)
+CongestionRequest::CongestionRequest(const char *name, short kind) : ::veins::BaseFrame1609_4(name,kind)
 {
-    this->timestamp = 0;
-    this->senderAddress = -1;
-    this->averageSpeed = 0;
-    this->serial = 0;
+    roadsOfInterest_arraysize = 0;
+    this->roadsOfInterest = 0;
 }
 
-CongestionInfoMessage::CongestionInfoMessage(const CongestionInfoMessage& other) : ::veins::BaseFrame1609_4(other)
+CongestionRequest::CongestionRequest(const CongestionRequest& other) : ::veins::BaseFrame1609_4(other)
 {
+    roadsOfInterest_arraysize = 0;
+    this->roadsOfInterest = 0;
     copy(other);
 }
 
-CongestionInfoMessage::~CongestionInfoMessage()
+CongestionRequest::~CongestionRequest()
 {
+    delete [] this->roadsOfInterest;
 }
 
-CongestionInfoMessage& CongestionInfoMessage::operator=(const CongestionInfoMessage& other)
+CongestionRequest& CongestionRequest::operator=(const CongestionRequest& other)
 {
     if (this==&other) return *this;
     ::veins::BaseFrame1609_4::operator=(other);
@@ -205,92 +206,70 @@ CongestionInfoMessage& CongestionInfoMessage::operator=(const CongestionInfoMess
     return *this;
 }
 
-void CongestionInfoMessage::copy(const CongestionInfoMessage& other)
+void CongestionRequest::copy(const CongestionRequest& other)
 {
-    this->timestamp = other.timestamp;
-    this->edgeID = other.edgeID;
-    this->senderAddress = other.senderAddress;
-    this->averageSpeed = other.averageSpeed;
-    this->serial = other.serial;
+    delete [] this->roadsOfInterest;
+    this->roadsOfInterest = (other.roadsOfInterest_arraysize==0) ? nullptr : new cppString[other.roadsOfInterest_arraysize];
+    roadsOfInterest_arraysize = other.roadsOfInterest_arraysize;
+    for (unsigned int i=0; i<roadsOfInterest_arraysize; i++)
+        this->roadsOfInterest[i] = other.roadsOfInterest[i];
 }
 
-void CongestionInfoMessage::parsimPack(omnetpp::cCommBuffer *b) const
+void CongestionRequest::parsimPack(omnetpp::cCommBuffer *b) const
 {
     ::veins::BaseFrame1609_4::parsimPack(b);
-    doParsimPacking(b,this->timestamp);
-    doParsimPacking(b,this->edgeID);
-    doParsimPacking(b,this->senderAddress);
-    doParsimPacking(b,this->averageSpeed);
-    doParsimPacking(b,this->serial);
+    b->pack(roadsOfInterest_arraysize);
+    doParsimArrayPacking(b,this->roadsOfInterest,roadsOfInterest_arraysize);
 }
 
-void CongestionInfoMessage::parsimUnpack(omnetpp::cCommBuffer *b)
+void CongestionRequest::parsimUnpack(omnetpp::cCommBuffer *b)
 {
     ::veins::BaseFrame1609_4::parsimUnpack(b);
-    doParsimUnpacking(b,this->timestamp);
-    doParsimUnpacking(b,this->edgeID);
-    doParsimUnpacking(b,this->senderAddress);
-    doParsimUnpacking(b,this->averageSpeed);
-    doParsimUnpacking(b,this->serial);
+    delete [] this->roadsOfInterest;
+    b->unpack(roadsOfInterest_arraysize);
+    if (roadsOfInterest_arraysize==0) {
+        this->roadsOfInterest = 0;
+    } else {
+        this->roadsOfInterest = new cppString[roadsOfInterest_arraysize];
+        doParsimArrayUnpacking(b,this->roadsOfInterest,roadsOfInterest_arraysize);
+    }
 }
 
-::omnetpp::simtime_t CongestionInfoMessage::getTimestamp() const
+void CongestionRequest::setRoadsOfInterestArraySize(unsigned int size)
 {
-    return this->timestamp;
+    cppString *roadsOfInterest2 = (size==0) ? nullptr : new cppString[size];
+    unsigned int sz = roadsOfInterest_arraysize < size ? roadsOfInterest_arraysize : size;
+    for (unsigned int i=0; i<sz; i++)
+        roadsOfInterest2[i] = this->roadsOfInterest[i];
+    roadsOfInterest_arraysize = size;
+    delete [] this->roadsOfInterest;
+    this->roadsOfInterest = roadsOfInterest2;
 }
 
-void CongestionInfoMessage::setTimestamp(::omnetpp::simtime_t timestamp)
+unsigned int CongestionRequest::getRoadsOfInterestArraySize() const
 {
-    this->timestamp = timestamp;
+    return roadsOfInterest_arraysize;
 }
 
-const char * CongestionInfoMessage::getEdgeID() const
+cppString& CongestionRequest::getRoadsOfInterest(unsigned int k)
 {
-    return this->edgeID.c_str();
+    if (k>=roadsOfInterest_arraysize) throw omnetpp::cRuntimeError("Array of size %d indexed by %d", roadsOfInterest_arraysize, k);
+    return this->roadsOfInterest[k];
 }
 
-void CongestionInfoMessage::setEdgeID(const char * edgeID)
+void CongestionRequest::setRoadsOfInterest(unsigned int k, const cppString& roadsOfInterest)
 {
-    this->edgeID = edgeID;
+    if (k>=roadsOfInterest_arraysize) throw omnetpp::cRuntimeError("Array of size %d indexed by %d", roadsOfInterest_arraysize, k);
+    this->roadsOfInterest[k] = roadsOfInterest;
 }
 
-LAddress::L2Type& CongestionInfoMessage::getSenderAddress()
-{
-    return this->senderAddress;
-}
-
-void CongestionInfoMessage::setSenderAddress(const LAddress::L2Type& senderAddress)
-{
-    this->senderAddress = senderAddress;
-}
-
-double CongestionInfoMessage::getAverageSpeed() const
-{
-    return this->averageSpeed;
-}
-
-void CongestionInfoMessage::setAverageSpeed(double averageSpeed)
-{
-    this->averageSpeed = averageSpeed;
-}
-
-int CongestionInfoMessage::getSerial() const
-{
-    return this->serial;
-}
-
-void CongestionInfoMessage::setSerial(int serial)
-{
-    this->serial = serial;
-}
-
-class CongestionInfoMessageDescriptor : public omnetpp::cClassDescriptor
+class CongestionRequestDescriptor : public omnetpp::cClassDescriptor
 {
   private:
     mutable const char **propertynames;
   public:
-    CongestionInfoMessageDescriptor();
-    virtual ~CongestionInfoMessageDescriptor();
+    CongestionRequestDescriptor();
+    virtual ~CongestionRequestDescriptor();
 
     virtual bool doesSupport(omnetpp::cObject *obj) const override;
     virtual const char **getPropertyNames() const override;
@@ -312,24 +291,24 @@ class CongestionInfoMessageDescriptor : public omnetpp::cClassDescriptor
     virtual void *getFieldStructValuePointer(void *object, int field, int i) const override;
 };
 
-Register_ClassDescriptor(CongestionInfoMessageDescriptor)
+Register_ClassDescriptor(CongestionRequestDescriptor)
 
-CongestionInfoMessageDescriptor::CongestionInfoMessageDescriptor() : omnetpp::cClassDescriptor("veins::CongestionInfoMessage", "veins::BaseFrame1609_4")
+CongestionRequestDescriptor::CongestionRequestDescriptor() : omnetpp::cClassDescriptor("veins::CongestionRequest", "veins::BaseFrame1609_4")
 {
     propertynames = nullptr;
 }
 
-CongestionInfoMessageDescriptor::~CongestionInfoMessageDescriptor()
+CongestionRequestDescriptor::~CongestionRequestDescriptor()
 {
     delete[] propertynames;
 }
 
-bool CongestionInfoMessageDescriptor::doesSupport(omnetpp::cObject *obj) const
+bool CongestionRequestDescriptor::doesSupport(omnetpp::cObject *obj) const
 {
-    return dynamic_cast<CongestionInfoMessage *>(obj)!=nullptr;
+    return dynamic_cast<CongestionRequest *>(obj)!=nullptr;
 }
 
-const char **CongestionInfoMessageDescriptor::getPropertyNames() const
+const char **CongestionRequestDescriptor::getPropertyNames() const
 {
     if (!propertynames) {
         static const char *names[] = {  nullptr };
@@ -340,19 +319,19 @@ const char **CongestionInfoMessageDescriptor::getPropertyNames() const
     return propertynames;
 }
 
-const char *CongestionInfoMessageDescriptor::getProperty(const char *propertyname) const
+const char *CongestionRequestDescriptor::getProperty(const char *propertyname) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     return basedesc ? basedesc->getProperty(propertyname) : nullptr;
 }
 
-int CongestionInfoMessageDescriptor::getFieldCount() const
+int CongestionRequestDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 5+basedesc->getFieldCount() : 5;
+    return basedesc ? 1+basedesc->getFieldCount() : 1;
 }
 
-unsigned int CongestionInfoMessageDescriptor::getFieldTypeFlags(int field) const
+unsigned int CongestionRequestDescriptor::getFieldTypeFlags(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -361,16 +340,12 @@ unsigned int CongestionInfoMessageDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,
-        FD_ISEDITABLE,
-        FD_ISCOMPOUND,
-        FD_ISEDITABLE,
-        FD_ISEDITABLE,
+        FD_ISARRAY | FD_ISCOMPOUND,
     };
-    return (field>=0 && field<5) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<1) ? fieldTypeFlags[field] : 0;
 }
 
-const char *CongestionInfoMessageDescriptor::getFieldName(int field) const
+const char *CongestionRequestDescriptor::getFieldName(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -379,28 +354,20 @@ const char *CongestionInfoMessageDescriptor::getFieldName(int field) const
         field -= basedesc->getFieldCount();
     }
     static const char *fieldNames[] = {
-        "timestamp",
-        "edgeID",
-        "senderAddress",
-        "averageSpeed",
-        "serial",
+        "roadsOfInterest",
     };
-    return (field>=0 && field<5) ? fieldNames[field] : nullptr;
+    return (field>=0 && field<1) ? fieldNames[field] : nullptr;
 }
 
-int CongestionInfoMessageDescriptor::findField(const char *fieldName) const
+int CongestionRequestDescriptor::findField(const char *fieldName) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount() : 0;
-    if (fieldName[0]=='t' && strcmp(fieldName, "timestamp")==0) return base+0;
-    if (fieldName[0]=='e' && strcmp(fieldName, "edgeID")==0) return base+1;
-    if (fieldName[0]=='s' && strcmp(fieldName, "senderAddress")==0) return base+2;
-    if (fieldName[0]=='a' && strcmp(fieldName, "averageSpeed")==0) return base+3;
-    if (fieldName[0]=='s' && strcmp(fieldName, "serial")==0) return base+4;
+    if (fieldName[0]=='r' && strcmp(fieldName, "roadsOfInterest")==0) return base+0;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
-const char *CongestionInfoMessageDescriptor::getFieldTypeString(int field) const
+const char *CongestionRequestDescriptor::getFieldTypeString(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -409,16 +376,12 @@ const char *CongestionInfoMessageDescriptor::getFieldTypeString(int field) const
         field -= basedesc->getFieldCount();
     }
     static const char *fieldTypeStrings[] = {
-        "simtime_t",
-        "string",
-        "LAddress::L2Type",
-        "double",
-        "int",
+        "cppString",
     };
-    return (field>=0 && field<5) ? fieldTypeStrings[field] : nullptr;
+    return (field>=0 && field<1) ? fieldTypeStrings[field] : nullptr;
 }
 
-const char **CongestionInfoMessageDescriptor::getFieldPropertyNames(int field) const
+const char **CongestionRequestDescriptor::getFieldPropertyNames(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -431,7 +394,7 @@ const char **CongestionInfoMessageDescriptor::getFieldPropertyNames(int field) c
     }
 }
 
-const char *CongestionInfoMessageDescriptor::getFieldProperty(int field, const char *propertyname) const
+const char *CongestionRequestDescriptor::getFieldProperty(int field, const char *propertyname) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -444,7 +407,7 @@ const char *CongestionInfoMessageDescriptor::getFieldProperty(int field, const c
     }
 }
 
-int CongestionInfoMessageDescriptor::getFieldArraySize(void *object, int field) const
+int CongestionRequestDescriptor::getFieldArraySize(void *object, int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -452,13 +415,14 @@ int CongestionInfoMessageDescriptor::getFieldArraySize(void *object, int field) 
             return basedesc->getFieldArraySize(object, field);
         field -= basedesc->getFieldCount();
     }
-    CongestionInfoMessage *pp = (CongestionInfoMessage *)object; (void)pp;
+    CongestionRequest *pp = (CongestionRequest *)object; (void)pp;
     switch (field) {
+        case 0: return pp->getRoadsOfInterestArraySize();
         default: return 0;
     }
 }
 
-const char *CongestionInfoMessageDescriptor::getFieldDynamicTypeString(void *object, int field, int i) const
+const char *CongestionRequestDescriptor::getFieldDynamicTypeString(void *object, int field, int i) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -466,13 +430,13 @@ const char *CongestionInfoMessageDescriptor::getFieldDynamicTypeString(void *obj
             return basedesc->getFieldDynamicTypeString(object,field,i);
         field -= basedesc->getFieldCount();
     }
-    CongestionInfoMessage *pp = (CongestionInfoMessage *)object; (void)pp;
+    CongestionRequest *pp = (CongestionRequest *)object; (void)pp;
     switch (field) {
         default: return nullptr;
     }
 }
 
-std::string CongestionInfoMessageDescriptor::getFieldValueAsString(void *object, int field, int i) const
+std::string CongestionRequestDescriptor::getFieldValueAsString(void *object, int field, int i) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -480,18 +444,14 @@ std::string CongestionInfoMessageDescriptor::getFieldValueAsString(void *object,
             return basedesc->getFieldValueAsString(object,field,i);
         field -= basedesc->getFieldCount();
     }
-    CongestionInfoMessage *pp = (CongestionInfoMessage *)object; (void)pp;
+    CongestionRequest *pp = (CongestionRequest *)object; (void)pp;
     switch (field) {
-        case 0: return simtime2string(pp->getTimestamp());
-        case 1: return oppstring2string(pp->getEdgeID());
-        case 2: {std::stringstream out; out << pp->getSenderAddress(); return out.str();}
-        case 3: return double2string(pp->getAverageSpeed());
-        case 4: return long2string(pp->getSerial());
+        // case 0: {std::stringstream out; out << pp->getRoadsOfInterest(i); return out.str();}
         default: return "";
     }
 }
 
-bool CongestionInfoMessageDescriptor::setFieldValueAsString(void *object, int field, int i, const char *value) const
+bool CongestionRequestDescriptor::setFieldValueAsString(void *object, int field, int i, const char *value) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -499,17 +459,13 @@ bool CongestionInfoMessageDescriptor::setFieldValueAsString(void *object, int fi
             return basedesc->setFieldValueAsString(object,field,i,value);
         field -= basedesc->getFieldCount();
     }
-    CongestionInfoMessage *pp = (CongestionInfoMessage *)object; (void)pp;
+    CongestionRequest *pp = (CongestionRequest *)object; (void)pp;
     switch (field) {
-        case 0: pp->setTimestamp(string2simtime(value)); return true;
-        case 1: pp->setEdgeID((value)); return true;
-        case 3: pp->setAverageSpeed(string2double(value)); return true;
-        case 4: pp->setSerial(string2long(value)); return true;
         default: return false;
     }
 }
 
-const char *CongestionInfoMessageDescriptor::getFieldStructName(int field) const
+const char *CongestionRequestDescriptor::getFieldStructName(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -518,12 +474,12 @@ const char *CongestionInfoMessageDescriptor::getFieldStructName(int field) const
         field -= basedesc->getFieldCount();
     }
     switch (field) {
-        case 2: return omnetpp::opp_typename(typeid(LAddress::L2Type));
+        case 0: return omnetpp::opp_typename(typeid(cppString));
         default: return nullptr;
     };
 }
 
-void *CongestionInfoMessageDescriptor::getFieldStructValuePointer(void *object, int field, int i) const
+void *CongestionRequestDescriptor::getFieldStructValuePointer(void *object, int field, int i) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -531,9 +487,9 @@ void *CongestionInfoMessageDescriptor::getFieldStructValuePointer(void *object, 
             return basedesc->getFieldStructValuePointer(object, field, i);
         field -= basedesc->getFieldCount();
     }
-    CongestionInfoMessage *pp = (CongestionInfoMessage *)object; (void)pp;
+    CongestionRequest *pp = (CongestionRequest *)object; (void)pp;
     switch (field) {
-        case 2: return (void *)(&pp->getSenderAddress()); break;
+        case 0: return (void *)(&pp->getRoadsOfInterest(i)); break;
         default: return nullptr;
     }
 }
