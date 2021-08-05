@@ -29,27 +29,27 @@
 
 // cplusplus {{
 #include "veins/modules/messages/BaseFrame1609_4_m.h"
-typedef std::string cppString;
+#include <vector>
+typedef std::vector<std::string> StringVector;
 // }}
 
 
 namespace veins {
 
 /**
- * Class generated from <tt>veins/modules/application/traci/modified/P2PCongestionAvoidance/Messages/CongestionRequest.msg:25</tt> by nedtool.
+ * Class generated from <tt>veins/modules/application/traci/modified/P2PCongestionAvoidance/Messages/CongestionRequest.msg:27</tt> by nedtool.
  * <pre>
  * packet CongestionRequest extends BaseFrame1609_4
  * {
  *     // Query about the next set of candidate roads
- *     cppString roadsOfInterest[];
+ *     StringVector roadsOfInterest;
  * }
  * </pre>
  */
 class VEINS_API CongestionRequest : public ::veins::BaseFrame1609_4
 {
   protected:
-    cppString *roadsOfInterest; // array ptr
-    unsigned int roadsOfInterest_arraysize;
+    StringVector roadsOfInterest;
 
   private:
     void copy(const CongestionRequest& other);
@@ -68,11 +68,9 @@ class VEINS_API CongestionRequest : public ::veins::BaseFrame1609_4
     virtual void parsimUnpack(omnetpp::cCommBuffer *b) override;
 
     // field getter/setter methods
-    virtual void setRoadsOfInterestArraySize(unsigned int size);
-    virtual unsigned int getRoadsOfInterestArraySize() const;
-    virtual cppString& getRoadsOfInterest(unsigned int k);
-    virtual const cppString& getRoadsOfInterest(unsigned int k) const {return const_cast<CongestionRequest*>(this)->getRoadsOfInterest(k);}
-    virtual void setRoadsOfInterest(unsigned int k, const cppString& roadsOfInterest);
+    virtual StringVector& getRoadsOfInterest();
+    virtual const StringVector& getRoadsOfInterest() const {return const_cast<CongestionRequest*>(this)->getRoadsOfInterest();}
+    virtual void setRoadsOfInterest(const StringVector& roadsOfInterest);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const CongestionRequest& obj) {obj.parsimPack(b);}

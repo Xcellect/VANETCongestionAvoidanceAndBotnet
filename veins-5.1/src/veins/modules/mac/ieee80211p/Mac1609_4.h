@@ -247,7 +247,7 @@ protected:
         return BaseMacLayer::getMACAddress();
     }
 
-protected:
+public:
     /** @brief Self message to indicate that the current channel shall be switched.*/
     cMessage* nextChannelSwitch;
 

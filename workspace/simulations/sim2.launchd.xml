@@ -40,7 +40,11 @@
     <copy file="sim2.sumo.cfg" type="config" />
     
     <copy file="grid-16-200.net.xml" />
-	<copy file="1_049.rou.alt.xml" />
 	<!-- Add all the files you want to include -->
+	<copy file="hi-traf.rou.alt.xml" />
+	<copy file="hi2-traf.rou.alt.xml" />
+	<copy file="med-traf.rou.alt.xml" />
+	<copy file="lo-traf.rou.alt.xml" />
+	<copy file="ultra-hi-traf.rou.alt.xml" />
 </launch>
 

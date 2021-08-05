@@ -22,9 +22,11 @@
 
 cplusplus {{
 #include "veins/modules/messages/BaseFrame1609_4_m.h"
+#include "veins/base/utils/Coord.h"
 }}
 namespace veins;
 class noncobject BaseFrame1609_4;
+class noncobject Coord;
 
 packet CongestionInfoStruct extends BaseFrame1609_4 {
     simtime_t timestamp;                      // timestamp

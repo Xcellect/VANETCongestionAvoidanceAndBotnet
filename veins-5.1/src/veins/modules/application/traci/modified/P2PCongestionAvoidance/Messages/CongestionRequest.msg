@@ -15,14 +15,16 @@
 
 cplusplus {{
 #include "veins/modules/messages/BaseFrame1609_4_m.h"
-typedef std::string cppString;
+#include <vector>
+typedef std::vector<std::string> StringVector;
+
 }}
 
 namespace veins;
-class noncobject cppString;
+class noncobject StringVector;
 
 class BaseFrame1609_4;
 packet CongestionRequest extends BaseFrame1609_4 {
     // Query about the next set of candidate roads
-	cppString roadsOfInterest[];
+	StringVector roadsOfInterest;
 }

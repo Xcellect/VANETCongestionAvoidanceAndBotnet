@@ -182,20 +182,15 @@ Register_Class(CongestionRequest)
 
 CongestionRequest::CongestionRequest(const char *name, short kind) : ::veins::BaseFrame1609_4(name,kind)
 {
-    roadsOfInterest_arraysize = 0;
-    this->roadsOfInterest = 0;
 }
 
 CongestionRequest::CongestionRequest(const CongestionRequest& other) : ::veins::BaseFrame1609_4(other)
 {
-    roadsOfInterest_arraysize = 0;
-    this->roadsOfInterest = 0;
     copy(other);
 }
 
 CongestionRequest::~CongestionRequest()
 {
-    delete [] this->roadsOfInterest;
 }
 
 CongestionRequest& CongestionRequest::operator=(const CongestionRequest& other)
@@ -208,59 +203,29 @@ CongestionRequest& CongestionRequest::operator=(const CongestionRequest& other)
 
 void CongestionRequest::copy(const CongestionRequest& other)
 {
-    delete [] this->roadsOfInterest;
-    this->roadsOfInterest = (other.roadsOfInterest_arraysize==0) ? nullptr : new cppString[other.roadsOfInterest_arraysize];
-    roadsOfInterest_arraysize = other.roadsOfInterest_arraysize;
-    for (unsigned int i=0; i<roadsOfInterest_arraysize; i++)
-        this->roadsOfInterest[i] = other.roadsOfInterest[i];
+    this->roadsOfInterest = other.roadsOfInterest;
 }
 
 void CongestionRequest::parsimPack(omnetpp::cCommBuffer *b) const
 {
     ::veins::BaseFrame1609_4::parsimPack(b);
-    b->pack(roadsOfInterest_arraysize);
-    doParsimArrayPacking(b,this->roadsOfInterest,roadsOfInterest_arraysize);
+    doParsimPacking(b,this->roadsOfInterest);
 }
 
 void CongestionRequest::parsimUnpack(omnetpp::cCommBuffer *b)
 {
     ::veins::BaseFrame1609_4::parsimUnpack(b);
-    delete [] this->roadsOfInterest;
-    b->unpack(roadsOfInterest_arraysize);
-    if (roadsOfInterest_arraysize==0) {
-        this->roadsOfInterest = 0;
-    } else {
-        this->roadsOfInterest = new cppString[roadsOfInterest_arraysize];
-        doParsimArrayUnpacking(b,this->roadsOfInterest,roadsOfInterest_arraysize);
-    }
+    doParsimUnpacking(b,this->roadsOfInterest);
 }
 
-void CongestionRequest::setRoadsOfInterestArraySize(unsigned int size)
+StringVector& CongestionRequest::getRoadsOfInterest()
 {
-    cppString *roadsOfInterest2 = (size==0) ? nullptr : new cppString[size];
-    unsigned int sz = roadsOfInterest_arraysize < size ? roadsOfInterest_arraysize : size;
-    for (unsigned int i=0; i<sz; i++)
-        roadsOfInterest2[i] = this->roadsOfInterest[i];
-    roadsOfInterest_arraysize = size;
-    delete [] this->roadsOfInterest;
-    this->roadsOfInterest = roadsOfInterest2;
+    return this->roadsOfInterest;
 }
 
-unsigned int CongestionRequest::getRoadsOfInterestArraySize() const
+void CongestionRequest::setRoadsOfInterest(const StringVector& roadsOfInterest)
 {
-    return roadsOfInterest_arraysize;
-}
-
-cppString& CongestionRequest::getRoadsOfInterest(unsigned int k)
-{
-    if (k>=roadsOfInterest_arraysize) throw omnetpp::cRuntimeError("Array of size %d indexed by %d", roadsOfInterest_arraysize, k);
-    return this->roadsOfInterest[k];
-}
-
-void CongestionRequest::setRoadsOfInterest(unsigned int k, const cppString& roadsOfInterest)
-{
-    if (k>=roadsOfInterest_arraysize) throw omnetpp::cRuntimeError("Array of size %d indexed by %d", roadsOfInterest_arraysize, k);
-    this->roadsOfInterest[k] = roadsOfInterest;
+    this->roadsOfInterest = roadsOfInterest;
 }
 
 class CongestionRequestDescriptor : public omnetpp::cClassDescriptor
@@ -340,7 +305,7 @@ unsigned int CongestionRequestDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISARRAY | FD_ISCOMPOUND,
+        FD_ISCOMPOUND,
     };
     return (field>=0 && field<1) ? fieldTypeFlags[field] : 0;
 }
@@ -376,7 +341,7 @@ const char *CongestionRequestDescriptor::getFieldTypeString(int field) const
         field -= basedesc->getFieldCount();
     }
     static const char *fieldTypeStrings[] = {
-        "cppString",
+        "StringVector",
     };
     return (field>=0 && field<1) ? fieldTypeStrings[field] : nullptr;
 }
@@ -417,7 +382,6 @@ int CongestionRequestDescriptor::getFieldArraySize(void *object, int field) cons
     }
     CongestionRequest *pp = (CongestionRequest *)object; (void)pp;
     switch (field) {
-        case 0: return pp->getRoadsOfInterestArraySize();
         default: return 0;
     }
 }
@@ -446,7 +410,7 @@ std::string CongestionRequestDescriptor::getFieldValueAsString(void *object, int
     }
     CongestionRequest *pp = (CongestionRequest *)object; (void)pp;
     switch (field) {
-        // case 0: {std::stringstream out; out << pp->getRoadsOfInterest(i); return out.str();}
+        //case 0: {std::stringstream out; out << pp->getRoadsOfInterest(); return out.str();}
         default: return "";
     }
 }
@@ -474,7 +438,7 @@ const char *CongestionRequestDescriptor::getFieldStructName(int field) const
         field -= basedesc->getFieldCount();
     }
     switch (field) {
-        case 0: return omnetpp::opp_typename(typeid(cppString));
+        case 0: return omnetpp::opp_typename(typeid(StringVector));
         default: return nullptr;
     };
 }
@@ -489,7 +453,7 @@ void *CongestionRequestDescriptor::getFieldStructValuePointer(void *object, int 
     }
     CongestionRequest *pp = (CongestionRequest *)object; (void)pp;
     switch (field) {
-        case 0: return (void *)(&pp->getRoadsOfInterest(i)); break;
+        case 0: return (void *)(&pp->getRoadsOfInterest()); break;
         default: return nullptr;
     }
 }

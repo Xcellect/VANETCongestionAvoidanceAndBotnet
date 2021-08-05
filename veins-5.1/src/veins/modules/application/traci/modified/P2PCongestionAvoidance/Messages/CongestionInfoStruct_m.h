@@ -29,13 +29,14 @@
 
 // cplusplus {{
 #include "veins/modules/messages/BaseFrame1609_4_m.h"
+#include "veins/base/utils/Coord.h"
 // }}
 
 
 namespace veins {
 
 /**
- * Class generated from <tt>veins/modules/application/traci/modified/P2PCongestionAvoidance/Messages/CongestionInfoStruct.msg:29</tt> by nedtool.
+ * Class generated from <tt>veins/modules/application/traci/modified/P2PCongestionAvoidance/Messages/CongestionInfoStruct.msg:31</tt> by nedtool.
  * <pre>
  * packet CongestionInfoStruct extends BaseFrame1609_4
  * {

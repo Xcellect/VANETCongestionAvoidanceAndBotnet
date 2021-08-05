@@ -1,0 +1,71 @@
+                                                                
+version 2
+run WithBeaconing-0-20210803-19:14:17-2024
+attr configname WithBeaconing
+attr datetime 20210803-19:14:17
+attr experiment WithBeaconing
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Sim2Scenario
+attr processid 2024
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.car[*].appl.sendBeacons true
+param *.exploited[*].appl.sendBeacons true
+param *.playgroundSizeX 1000m
+param *.playgroundSizeY 1000m
+param *.playgroundSizeZ 50m
+param *.manager.moduleType "\"exploited=org.car2x.veins.nodes.Car *=org.car2x.veins.nodes.Car\""
+param *.manager.moduleName "\"exploited=exploited *=car\""
+param *.manager.updateInterval 1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"sim2.launchd.xml\")"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 300m
+param *.connectionManager.drawMaxIntfDist false
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -110dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.car[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.car[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.exploited[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.exploited[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.car[*].applType "\"P2PCongestionProtocol\""
+param *.car[*].appl.headerLength "80 bit"
+param *.car[*].appl.sendBeacons false
+param *.car[*].appl.dataOnSch false
+param *.car[*].appl.beaconInterval 1s
+param *.exploited[*].applType "\"P2PBotnetProtocol\""
+param *.exploited[*].appl.headerLength "80 bit"
+param *.exploited[*].appl.sendBeacons false
+param *.exploited[*].appl.dataOnSch false
+param *.exploited[*].appl.beaconInterval 1s
+param *.car[*].veinsmobility.x 0
+param *.car[*].veinsmobility.y 0
+param *.car[*].veinsmobility.z 0
+param *.exploited[*].veinsmobility.x 0
+param *.exploited[*].veinsmobility.y 0
+param *.exploited[*].veinsmobility.z 0
+
+vector 0 Sim2Scenario.car[0].veinsmobility posx ETV
+vector 1 Sim2Scenario.car[0].veinsmobility posy ETV
+vector 2 Sim2Scenario.car[1].veinsmobility posx ETV
+vector 3 Sim2Scenario.car[1].veinsmobility posy ETV
+0	2700 12 2 2 1 1 1 23.4 23.4 23.4 547.56
+1	2712 23 2 2 1 1 1 238.33130028169 238.33130028169 238.33130028169 56801.808693963
+2	2735 13 2 2 1 1 1 223.4 223.4 223.4 49907.56
+3	2748 23 2 2 1 1 1 237.32518936719 237.32518936719 237.32518936719 56323.245508175

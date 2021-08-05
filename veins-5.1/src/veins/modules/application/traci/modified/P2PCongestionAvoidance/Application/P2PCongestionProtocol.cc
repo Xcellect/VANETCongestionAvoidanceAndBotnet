@@ -36,16 +36,25 @@ void P2PCongestionProtocol::initialize(int stage)
 
         // get the start and end vertices here
         activeRoute = traciVehicle->getPlannedRoadIds();
-        start = activeRoute.front().substr(0,2);
+        start = traciVehicle->getRoadId().substr(0,2);
+        //start = activeRoute.front().substr(0,2);
         end = activeRoute.back().substr(2,4);
         int sameStartEnd = start.compare(end);
         if(sameStartEnd == 0) {
-            start = activeRoute.front().substr(2,4);
+            start = traciVehicle->getRoadId().substr(2,4);
+            //start = activeRoute.front().substr(0,2);
         }
         // generate all possible routes
         R.generatePaths(start, end, 50);
+
+        // initializing local cinfo struct, namely cx
+        cx = new CongestionInfoStruct();
+        cx->setCarID(mobility->getNode()->getIndex());
+        cx->setEdgeID(traciVehicle->getRoadId().c_str());
+
         broadcastCInfoEvt = new BroadcastCongestionInfoStructEvt();
         scheduleAt(simTime() + 2, broadcastCInfoEvt);
+
     }
 }
 
@@ -77,30 +86,35 @@ void P2PCongestionProtocol::onWSM(BaseFrame1609_4* frame)
             // repeat the received traffic update once in 2 seconds plus some random delay
             CongestionResponse* responseToSend = new CongestionResponse();
             vector<CongestionInfoStruct> responseVector;
-            int sizeOfResponse = request->getRoadsOfInterestArraySize();
-            for(int i = 0; i < sizeOfResponse; i++) {
-                string roi = request->getRoadsOfInterest(i);
+            vector<string> roiVec = request->getRoadsOfInterest();
+            for(int i = 0; i < roiVec.size(); i++) {
+                string roi = roiVec[i];
                 for(int j = 0; j < DBx.size(); j++) {
                     if(roi.compare(DBx[j].getEdgeID()) == 0) {
                         responseVector.push_back(DBx[j]);
                     }
                 }
             }
-            if(!responseVector.empty()) {
+            if(!responseVector.empty() && !sentMessage) {
                 responseToSend->setCInfoStructDB(responseVector);
                 responseToSend->setPsid(2);
                 LAddress::L2Type addr = request->getSenderAddress();
                 populateWSM(responseToSend, addr, 0);
                 sentMessage = true;
                 if (dataOnSch) {
-                    startService(Channel::sch1, 42, "Congestion Response Service");
+                    startService(Channel::sch2, 42, "Congestion response");
                     // started service and server advertising, schedule message to self to send later
                     scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), responseToSend);
                 } else {
                   // send right away on CCH, because channel switching is disabled
                     sendDown(responseToSend);
                 }
+            } else {
+                drop(responseToSend);
+                drop(request);
             }
+        } else {
+            drop(request);
         }
     } else if(frame->getPsid() == 2) {
         CongestionResponse* responseReceived = check_and_cast<CongestionResponse*>(frame);
@@ -112,10 +126,40 @@ void P2PCongestionProtocol::onWSM(BaseFrame1609_4* frame)
         }
         // reroute here.
         reroute();
-    } else if(frame->getPsid() == 3) {
-        CongestionInfoStruct* beacon = check_and_cast<CongestionInfoStruct*>(frame);
-        addOrDrop(beacon);
+        drop(responseReceived);
+    } else {
+        drop(frame);
     }
+}
+
+void P2PCongestionProtocol::onBSM(DemoSafetyMessage* bsm)
+{
+    DemoSafetyMessage* beacon = check_and_cast<DemoSafetyMessage*>(bsm);
+    // figure out how this coord belongs to this edge
+    string beaconEdge = get<0>(traci->getRoadMapPos(beacon->getSenderPos()));
+    // calculate average every time it gets a beacon
+    if(beaconEdge.compare(cx->getEdgeID()) == 0) {
+        double avg = 0;
+        if(cx->getAverageSpeed() == 0) {
+            avg = (traciVehicle->getSpeed() + vector2speed(beacon->getSenderSpeed()))/2;
+        } else {
+            avg = (cx->getAverageSpeed() + vector2speed(beacon->getSenderSpeed()))/2;
+        }
+        cx->setAverageSpeed(avg);
+    }
+    cx->setTimestamp(simTime());
+    addOrDrop(cx);
+}
+double P2PCongestionProtocol::vector2speed(Coord speed) {
+    double extracted;
+    if(speed.x < 0 || speed.x > 1) {
+        extracted = abs(speed.x);
+    } else if(speed.y < 0 || speed.y > 1) {
+        extracted = abs(speed.y);
+    } else if(speed.z < 0 || speed.z > 1) {
+        extracted = abs(speed.z);
+    }
+    return extracted;
 }
 
 // This method is for self messages (mostly timers)
@@ -134,16 +178,22 @@ void P2PCongestionProtocol::handleSelfMsg(cMessage* msg)
         // Just get the own road measurements directly.
         // Send structs as bsms here since this acts as a time and can be used for
         // periodic broadcast.
-        CongestionInfoStruct* cInfo = new CongestionInfoStruct();
-        cInfo->setCarID(mobility->getNode()->getIndex());
-        cInfo->setEdgeID( traciVehicle->getRoadId().c_str() );
-        // TODO: This should be the average speed of all cars in the road
-        cInfo->setAverageSpeed(traciVehicle->getSpeed());
-        cInfo->setTimestamp(simTime());
-        addOrDrop(cInfo);   // add this measurement to local
-        populateWSM(cInfo);
-        cInfo->setPsid(3);
-        sendDown(cInfo);
+
+
+        DemoSafetyMessage* bsm = new DemoSafetyMessage();
+        //bsm->setChannelNumber(channelNumber)
+        populateWSM(bsm);
+        sendDown(bsm);
+
+        //scheduleAt(simTime() + beaconInterval, sendBeaconEvt);
+
+        //TODO: 1. Get this message on receiver end
+        // 2. Add the speed till you reach the checkpoint position IF
+        // the messages are from the same road.
+        // 3. Add it to your CIDB i.e. the CongestionInfoStruct, push it to the DB
+        // 4. Send Cinfo request, others respond with this info in their DB
+
+
         // Send beacon every 2 seconds
         scheduleAt(simTime() + 2, dynamic_cast<BroadcastCongestionInfoStructEvt*>(msg));
     } else {
@@ -174,15 +224,24 @@ void P2PCongestionProtocol::handleSelfMsg(cMessage* msg)
 void P2PCongestionProtocol::handlePositionUpdate(cObject* obj)
 {
     DemoBaseApplLayer::handlePositionUpdate(obj);
+    // make measurement every position update. push it only when it exits that road
+    if(cx->getAverageSpeed() == 0) {
+        cx->setAverageSpeed(traciVehicle->getSpeed());
+    } else {
+        cx->setAverageSpeed((traciVehicle->getSpeed() + cx->getAverageSpeed())/2);
+    }
+    cx->setEdgeID(traciVehicle->getRoadId().c_str());
     // removing sentmessage flag
-    if(traciVehicle->getLanePosition() >= 160) {
+    if(traciVehicle->getLanePosition() >= 160 && !sentMessage) {
         sentMessage = true;
         candidateRoutes = R.getKRoutes(10);
         CongestionRequest* requestToSend = prepCongestionRequest();
         requestToSend->setPsid(1);
         requestToSend->setSenderAddress(mac->getMACAddress());
+
+
         if (dataOnSch) {
-            startService(Channel::sch1, 24, "Congestion Request Service");
+            startService(Channel::sch1, 24, "Congestion Service");
             // started service and server advertising, schedule message to self to send later
             scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), requestToSend);
         } else {
@@ -190,10 +249,17 @@ void P2PCongestionProtocol::handlePositionUpdate(cObject* obj)
             sendDown(requestToSend);
         }
 
-        // car is in checkpoint range
+        // car is in checkpoint range. push own measurement first. reset local cinfo struct
+        if(!localAdded) {
+            addOrDrop(cx);
+            // reset and prepare for next edge
+            cx->setAverageSpeed(0);
+            localAdded = true;
+        }
     } else {
         findHost()->getDisplayString().setTagArg("i", 1, "yellow");
-        // car is outside the checkpoint range
+        // car is outside the checkpoint range. measure bsm stuff here.
+        localAdded = false;
     }
 
 }
@@ -214,62 +280,86 @@ void P2PCongestionProtocol::handlePositionUpdate(cObject* obj)
 
 void P2PCongestionProtocol::reroute() {
     // BEFORE GETTING HERE: Figure out where we receive the RESPONSE [done]
-    // TODO: Calculate the best route from the local DB
-    map<string,double> candidateRoads;
-    for(int i = 0; i < DBx.size(); i++) {
-        string edgeInDB = DBx[i].getEdgeID();
-        if(traciVehicle->getRoadId().substr(2,4).compare(edgeInDB.substr(0,2)) == 0) {
-            candidateRoads[edgeInDB] += DBx[i].getAverageSpeed();
-        }
-    }
-    // sorting is unnecessary. just find the road with max speed.
-    double maxSpeed = 0;
-    double temp = 0;
-    string bestEdge = "";
-    for(auto& it : candidateRoads) {
-        temp = it.second;
-        if(temp > maxSpeed) {
-            maxSpeed = temp;
-            bestEdge = it.first;
-        }
-    }
-    list<string> prevRoute(activeRoute);
-    bool active = false;
-    bool abort = false;
-    activeRoute.clear();
-    // A0 E0 A4 E4
-    list<string> forbidden = {"A0", "E0", "A4", "E4"};
-    for(auto str : forbidden) {
-        if(bestEdge.substr(0,2).compare(str) == 0) {
-            abort = true;
-        }
-    }
-    // abort the junctions that don't allow u turns
-    if(!abort) {
-        // Start with the current road.
-        for(int i = 0; i < candidateRoutes.size(); i++) {
-            for(int j = 0; j < candidateRoutes[i].size(); j++) {
-                if(bestEdge.compare(candidateRoutes[i][j]) == 0 || active) {
-                    activeRoute.push_back(candidateRoutes[i][j]);
-                    active = true;
+                // TODO: Calculate the best route from the local DB
+                map<string,double> candidateRoads;
+                for(int i = 0; i < DBx.size(); i++) {
+                    string edgeInDB = DBx[i].getEdgeID();
+                    if(traciVehicle->getRoadId().substr(2,4).compare(edgeInDB.substr(0,2)) == 0) {
+                        candidateRoads.insert(pair<string,double>(DBx[i].getEdgeID(),DBx[i].getAverageSpeed()));
+                    }
                 }
-            }
-            if(active) {
-                break;
-            }
-        }
-    }
 
-    // if active is false or has only 1 edge that no better road was found
-    if(!active) {
-        activeRoute.assign(prevRoute.begin(),prevRoute.end());
-    } else {
-        activeRoute.push_front(traciVehicle->getRoadId());
-    }
+                // sorting is unnecessary. just find the road with max avg speed.
 
-    // Finally set this as active roads using the Traci interface
-    traciVehicle->changeVehicleRoute(activeRoute);
-    candidateRoutes.clear();
+                double maxSpeed = 0;
+                double temp = 0;
+                string bestEdge = "";
+                for(auto& it : candidateRoads) {
+                    temp = it.second;
+                    if(temp > maxSpeed) {
+                        maxSpeed = temp;
+                        bestEdge = it.first;
+                    }
+                    traciVehicle->changeRoute(it.first, it.second);
+                }
+                if(bestEdge.compare("") != 0) traciVehicle->changeRoute(bestEdge, 1);
+//                bool active = false;
+//                bool abort = false;
+//                // A0 E0 A4 E4
+//                list<string> forbidden = {"A0", "E0", "A4", "E4"};
+//                // abort the best edge junctions that don't allow u turns
+//                for(auto str : forbidden) {
+//                    if(bestEdge.substr(0,2).compare(str) == 0) {
+//                        abort = true;
+//                    }
+//                }
+//                // abort if the best edge is already in prev route
+//                for(auto str : activeRoute) {
+//                    if(bestEdge.compare(str) == 0) {
+//                        abort = true;
+//                    }
+//                }
+//
+//                list<string> prevRoute(activeRoute);
+//                activeRoute.clear();
+//
+//                if(!abort) {
+//                // Start with the current road.
+//                    for(int i = 0; i < candidateRoutes.size(); i++) {
+//                        for(int j = 0; j < candidateRoutes[i].size(); j++) {
+//                            if(bestEdge.compare(candidateRoutes[i][j]) == 0 || active) {
+//                                activeRoute.push_back(candidateRoutes[i][j]);
+//                                active = true;
+//                            }
+//                        }
+//                        if(active) {
+//                            break;
+//                        }
+//                    }
+//                }
+//
+//                // active = selected
+//                // if(!active || (activeRoute.size() > (prevRoute.size()-1))) {
+//                /*
+//                if(active && (activeRoute.size() > (prevRoute.size()-1))) {
+//                    activeRoute.push_front(traciVehicle->getRoadId());
+//                } else {
+//                    activeRoute.assign(prevRoute.begin(),prevRoute.end());
+//                }
+//
+//                */
+//
+//                // only find the next best edge not globally optimal. so this route might be
+//                // longer than original route
+//                if(active) {
+//                    activeRoute.push_front(traciVehicle->getRoadId());
+//                } else {
+//                    activeRoute.assign(prevRoute.begin(),prevRoute.end());
+//                }
+//                // Finally set this as active roads using the Traci interface
+//                traciVehicle->changeVehicleRoute(activeRoute);
+//                candidateRoutes.clear();
+
 }
 
 CongestionRequest* P2PCongestionProtocol::prepCongestionRequest() {
@@ -277,16 +367,16 @@ CongestionRequest* P2PCongestionProtocol::prepCongestionRequest() {
     for(int i = 0; i < candidateRoutes.size(); i++) {
         for(int j = 0; j < candidateRoutes[i].size(); j++) {
             if(traciVehicle->getRoadId().substr(2,4).compare(candidateRoutes[i][j].substr(0,2)) == 0) {
-                candidateEdges.push_back(candidateRoutes[i][j]);
+                if (find(candidateEdges.begin(), candidateEdges.end(), candidateRoutes[i][j]) == candidateEdges.end()) {
+                    // someName not in name, add it
+                    candidateEdges.push_back(candidateRoutes[i][j]);
+                }
             }
         }
     }
     CongestionRequest* cRequest = new CongestionRequest();
     populateWSM(cRequest);
-    cRequest->setRoadsOfInterestArraySize(candidateEdges.size());
-    for(int i = 0; i < candidateEdges.size(); i++) {
-        cRequest->setRoadsOfInterest(i, candidateEdges[i]);
-    }
+    cRequest->setRoadsOfInterest(candidateEdges);
     return cRequest;
 }
 
@@ -315,6 +405,7 @@ void P2PCongestionProtocol::addOrDrop(CongestionInfoStruct* msg) {
                 break;
             }
         }
+
         if(msg->getTimestamp() > m->getTimestamp()) {
             if(m->getCarID() != mobility->getNode()->getIndex()) {
                 DBx.erase(DBx.begin()+mIndex);
